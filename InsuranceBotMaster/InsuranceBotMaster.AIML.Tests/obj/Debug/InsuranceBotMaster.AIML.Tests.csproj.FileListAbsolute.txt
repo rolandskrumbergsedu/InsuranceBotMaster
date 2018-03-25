@@ -1,0 +1,16 @@
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\obj\Debug\InsuranceBotMaster.AIML.Tests.csprojResolveAssemblyReference.cache
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\obj\Debug\InsuranceBotMaster.AIML.Tests.csproj.CoreCompileInputs.cache
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\InsuranceBotMaster.AIML.Tests.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\InsuranceBotMaster.AIML.Tests.pdb
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\InsuranceBotMaster.AIML.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\InsuranceBotMaster.AIML.pdb
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\obj\Debug\InsuranceBotMaster.AIML.Tests.csproj.CopyComplete
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\obj\Debug\InsuranceBotMaster.AIML.Tests.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\InsuranceBotMaster.AIML.Tests\obj\Debug\InsuranceBotMaster.AIML.Tests.pdb

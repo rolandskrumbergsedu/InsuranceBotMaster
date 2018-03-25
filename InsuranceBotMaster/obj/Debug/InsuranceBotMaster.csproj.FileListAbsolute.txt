@@ -1,0 +1,55 @@
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Bot Application.dll.config
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Bot Application.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Bot Application.pdb
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Autofac.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Chronic.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Bot.Builder.Autofac.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Bot.Builder.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Bot.Connector.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Logging.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Protocols.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Tokens.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Rest.ClientRuntime.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Newtonsoft.Json.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\System.Net.Http.Formatting.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\System.Web.Http.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\System.Web.Http.WebHost.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Autofac.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Bot.Builder.pdb
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Bot.Builder.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Bot.Builder.Autofac.pdb
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Bot.Builder.Autofac.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Bot.Connector.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Logging.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Protocols.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.IdentityModel.Tokens.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.Rest.ClientRuntime.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\Newtonsoft.Json.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\System.Net.Http.Formatting.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\System.Web.Http.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\System.Web.Http.WebHost.xml
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\it\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\nl\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\pt-BR\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\obj\Debug\InsuranceBotMaster.csproj.CoreCompileInputs.cache
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\obj\Debug\InsuranceBotMaster.csproj.CopyComplete
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\obj\Debug\Bot Application.dll
+C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster\obj\Debug\Bot Application.pdb
