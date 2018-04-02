@@ -216,7 +216,7 @@ namespace InsuranceBotMaster.AIML.Utils
                 thatText = that.InnerText;
             }
 
-            return generatePath(patternText, thatText, topicName, isUserInput);
+            return GeneratePath(patternText, thatText, topicName, isUserInput);
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace InsuranceBotMaster.AIML.Utils
         /// <param name="isUserInput">marks the path to be created as originating from user input - so
         /// normalize out the * and _ wildcards used by AIML</param>
         /// <returns>The appropriately processed path</returns>
-        public string generatePath(string pattern, string that, string topicName, bool isUserInput)
+        public string GeneratePath(string pattern, string that, string topicName, bool isUserInput)
         {
             // to hold the normalized path to be entered into the graphmaster
             StringBuilder normalizedPath = new StringBuilder();

@@ -12,7 +12,7 @@ namespace InsuranceBotMaster.AIML.Tests
             bot.LoadSettings();
             bot.LoadAIMLFromFiles();
             Result output = bot.Chat("bye", "1");
-            Assert.AreEqual("Cheerio.", output.RawOutput);
+            Assert.AreEqual("See you later un-named user.", output.RawOutput);
         }
     }
 }

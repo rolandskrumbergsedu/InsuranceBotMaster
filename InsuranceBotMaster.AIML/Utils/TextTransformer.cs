@@ -28,13 +28,13 @@ namespace InsuranceBotMaster.AIML.Utils
         /// The input string to be transformed in some way
         /// </summary>
         public string GetInputString()
-        { return GetInputString(); }
+        { return InputString; }
 
         /// <summary>
         /// The input string to be transformed in some way
         /// </summary>
         public void SetInputString(string value)
-        { SetInputString(value); }
+        { InputString = value; }
 
         /// <summary>
         /// The transformed string

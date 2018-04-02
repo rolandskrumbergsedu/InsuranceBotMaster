@@ -146,44 +146,6 @@ namespace InsuranceBotMaster.AIML
         }
 
         /// <summary>
-        /// The email address of the botmaster to be used if WillCallHome is set to true
-        /// </summary>
-        public string AdminEmail
-        {
-            get
-            {
-                return GlobalSettings.GrabSetting("adminemail");
-            }
-            set
-            {
-                if (value.Length > 0)
-                {
-                    // check that the email is valid
-                    string patternStrict = @"^(([^<>()[\]\\.,;:\s@\""]+"
-                    + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"
-                    + @"((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
-                    + @"\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+"
-                    + @"[a-zA-Z]{2,}))$";
-                    Regex reStrict = new Regex(patternStrict);
-
-                    if (reStrict.IsMatch(value))
-                    {
-                        // update the settings
-                        GlobalSettings.AddSetting("adminemail", value);
-                    }
-                    else
-                    {
-                        throw (new Exception("The AdminEmail is not a valid email address"));
-                    }
-                }
-                else
-                {
-                    GlobalSettings.AddSetting("adminemail", "");
-                }
-            }
-        }
-
-        /// <summary>
         /// Flag to denote if the bot is writing messages to its logs
         /// </summary>
         public bool IsLogging
@@ -192,26 +154,6 @@ namespace InsuranceBotMaster.AIML
             {
                 string islogging = GlobalSettings.GrabSetting("islogging");
                 if (islogging.ToLower() == "true")
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Flag to denote if the bot will email the botmaster using the AdminEmail setting should an error
-        /// occur
-        /// </summary>
-        public bool WillCallHome
-        {
-            get
-            {
-                string willcallhome = GlobalSettings.GrabSetting("willcallhome");
-                if (willcallhome.ToLower() == "true")
                 {
                     return true;
                 }
@@ -262,7 +204,7 @@ namespace InsuranceBotMaster.AIML
         {
             get
             {
-                return Path.Combine(Environment.CurrentDirectory, GlobalSettings.GrabSetting("aimldirectory"));
+                return Path.Combine(!string.IsNullOrEmpty(BasePath) ? BasePath : Environment.CurrentDirectory, GlobalSettings.GrabSetting("aimldirectory"));
             }
         }
 
@@ -273,7 +215,7 @@ namespace InsuranceBotMaster.AIML
         {
             get
             {
-                return Path.Combine(Environment.CurrentDirectory, GlobalSettings.GrabSetting("configdirectory"));
+                return Path.Combine(!string.IsNullOrEmpty(BasePath) ? BasePath : Environment.CurrentDirectory, GlobalSettings.GrabSetting("configdirectory"));
             }
         }
 
@@ -284,7 +226,7 @@ namespace InsuranceBotMaster.AIML
         {
             get
             {
-                return Path.Combine(Environment.CurrentDirectory, GlobalSettings.GrabSetting("logdirectory"));
+                return Path.Combine(!string.IsNullOrEmpty(BasePath) ? BasePath : Environment.CurrentDirectory, GlobalSettings.GrabSetting("logdirectory"));
             }
         }
 
@@ -312,6 +254,8 @@ namespace InsuranceBotMaster.AIML
         /// </summary>
         public int MaxThatSize = 256;
 
+        public string BasePath = string.Empty;
+
         #endregion
 
         #region Delegates
@@ -332,6 +276,15 @@ namespace InsuranceBotMaster.AIML
         public Bot()
         {
             this.Setup();
+        }
+
+        /// <summary>
+        /// Ctor
+        /// </summary>
+        public Bot(string basePath)
+        {
+            this.Setup();
+            BasePath = basePath;
         }
 
         #region Settings methods
@@ -377,8 +330,9 @@ namespace InsuranceBotMaster.AIML
         public void LoadSettings()
         {
             // try a safe default setting for the settings xml file
-            string path = Path.Combine(Environment.CurrentDirectory, Path.Combine("config", "Settings.xml"));
-            this.LoadSettings(path);
+            string path = Path.Combine(!string.IsNullOrEmpty(BasePath) ? BasePath : Environment.CurrentDirectory, Path.Combine("ConfigurationFiles", "Settings.xml"));
+            
+            LoadSettings(path);
         }
 
         /// <summary>
@@ -431,22 +385,9 @@ namespace InsuranceBotMaster.AIML
             {
                 GlobalSettings.AddSetting("website", "http://sourceforge.net/projects/InsuranceBotMaster.AIML");
             }
-            if (GlobalSettings.ContainsSettingCalled("adminemail"))
-            {
-                string emailToCheck = GlobalSettings.GrabSetting("adminemail");
-                AdminEmail = emailToCheck;
-            }
-            else
-            {
-                GlobalSettings.AddSetting("adminemail", "");
-            }
             if (!GlobalSettings.ContainsSettingCalled("islogging"))
             {
                 GlobalSettings.AddSetting("islogging", "False");
-            }
-            if (!GlobalSettings.ContainsSettingCalled("willcallhome"))
-            {
-                GlobalSettings.AddSetting("willcallhome", "False");
             }
             if (!GlobalSettings.ContainsSettingCalled("timeout"))
             {
@@ -649,7 +590,7 @@ namespace InsuranceBotMaster.AIML
                 foreach (string sentence in rawSentences)
                 {
                     result.InputSentences.Add(sentence);
-                    string path = loader.generatePath(sentence, request.User.getLastBotOutput(), request.User.Topic, true);
+                    string path = loader.GeneratePath(sentence, request.User.getLastBotOutput(), request.User.Topic, true);
                     result.NormalizedPaths.Add(path);
                 }
 
