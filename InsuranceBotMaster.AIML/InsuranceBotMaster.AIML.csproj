@@ -189,9 +189,6 @@
     <Content Include="AIMLFiles\iu.aiml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="AIMLFiles\junktest.text">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="AIMLFiles\knowledge.aiml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -304,9 +301,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="AIMLFiles\update1.aiml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="AIMLFiles\wallace.aiml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="AIMLFiles\xfind.aiml">
