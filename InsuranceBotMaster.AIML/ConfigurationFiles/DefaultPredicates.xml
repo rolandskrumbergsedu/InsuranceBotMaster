@@ -7,7 +7,6 @@
   <item name="they" value="something" />
   <item name="age" value="unknown" />
   <item name="birthday" value="unknown" />
-  <item name="boyfriend" value="unknown" />
   <item name="brother" value="unknown" />
   <item name="cat" value="unknown" />
   <item name="does" value="unknown" />
@@ -19,7 +18,6 @@
   <item name="friend" value="unknown" />
   <item name="fullname" value="unknown" />
   <item name="gender" value="unknown" />
-  <item name="girlfriend" value="unknown" />
   <item name="has" value="unknown" />
   <item name="heard" value="unknown" />
   <item name="husband" value="unknown" />

@@ -1779,18 +1779,6 @@
     </template>
   </category>
   <category>
-    <pattern>WHAT ARE YOUR POLITICAL *</pattern>
-    <template>
-      I am <bot name="party"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHAT ARE YOUR POLITICS</pattern>
-    <template>
-      I am <bot name="party"/>.
-    </template>
-  </category>
-  <category>
     <pattern>WHAT ARE YOUR FAVORITE CELEBRITIES</pattern>
     <template>
       <bot name="celebrities"/>
@@ -2748,12 +2736,6 @@
     </template>
   </category>
   <category>
-    <pattern>WHAT IS YOUR POLITICAL *</pattern>
-    <template>
-      I am <bot name="party"/>.
-    </template>
-  </category>
-  <category>
     <pattern>WHAT IS YOUR BIRTHDAY</pattern>
     <template>
       <random>
@@ -3243,12 +3225,6 @@
   <category>
     <pattern>WHAT DO YOU THINK ABOUT HUMANS</pattern>
     <template>Humans all seem pretty much the same to me.</template>
-  </category>
-  <category>
-    <pattern>WHAT DO YOU THINK ABOUT POLITICS</pattern>
-    <template>
-      I am <bot name="party"/>.
-    </template>
   </category>
   <category>
     <pattern>WHAT DO YOU THINK ABOUT HUMAN *</pattern>
@@ -4412,7 +4388,6 @@
       &lt;property name="birthday" value="<bot name="birthday"/>" /&gt; <br/>
       &lt;property name="birthplace" value="<bot name="birthplace"/>" /&gt; <br/>
       &lt;property name="botmaster" value="<bot name="botmaster"/>" /&gt; <br/>
-      &lt;property name="boyfriend" value="<bot name="boyfriend"/>" /&gt; <br/>
       &lt;property name="build" value="<bot name="build"/>" /&gt; <br/>
       &lt;property name="celebrities" value="<bot name="celebrities"/>" /&gt; <br/>
       &lt;property name="celebrity" value="<bot name="celebrity"/>" /&gt; <br/>
@@ -4451,7 +4426,6 @@
       &lt;property name="friends" value="<bot name="friends"/>" /&gt; <br/>
       &lt;property name="gender" value="<bot name="gender"/>" /&gt; <br/>
       &lt;property name="genus" value="<bot name="genus"/>" /&gt; <br/>
-      &lt;property name="girlfriend" value="<bot name="girlfriend"/>" /&gt; <br/>
       &lt;property name="hair" value="<bot name="hair"/>" /&gt; <br/>
       &lt;property name="hockeyteam" value="<bot name="hockeyteam"/>" /&gt; <br/>
       &lt;property name="hourlyqueries" value="<bot name="hourlyqueries"/>" /&gt; <br/>
@@ -4471,9 +4445,7 @@
       &lt;property name="order" value="<bot name="order"/>" /&gt; <br/>
       &lt;property name="orientation" value="<bot name="orientation"/>" /&gt; <br/>
       &lt;property name="os" value="<bot name="os"/>" /&gt; <br/>
-      &lt;property name="party" value="<bot name="party"/>" /&gt; <br/>
       &lt;property name="phylum" value="<bot name="phylum"/>" /&gt; <br/>
-      &lt;property name="president" value="<bot name="president"/>" /&gt; <br/>
       &lt;property name="question" value="<bot name="question"/>" /&gt; <br/>
       &lt;property name="religion" value="<bot name="religion"/>" /&gt; <br/>
       &lt;property name="richness" value="<bot name="richness"/>" /&gt; <br/>
@@ -10870,14 +10842,6 @@
     </template>
   </category>
   <category>
-    <pattern>DO YOU LIKE PRESIDENT *</pattern>
-    <template>
-      <set name="he">
-        President <star/>
-      </set>He is okay but I am <bot name="party"/> not a Republican.
-    </template>
-  </category>
-  <category>
     <pattern>DO YOU LIKE BEANIE BABIES</pattern>
     <template>
       Yes I like toys very much.
@@ -15481,12 +15445,6 @@
     <template>Yes.</template>
   </category>
   <category>
-    <pattern>ARE YOU A COMMUNIST</pattern>
-    <template>
-      No I am a <bot name="party"/>.
-    </template>
-  </category>
-  <category>
     <pattern>ARE YOU A SQUIRREL</pattern>
     <template>
       No I am a <bot name="order"/>.
@@ -15778,12 +15736,6 @@
     </template>
   </category>
   <category>
-    <pattern>ARE YOU A LIBERTARIAN</pattern>
-    <template>
-      Yes, I am a <bot name="party"/>.
-    </template>
-  </category>
-  <category>
     <pattern>ARE YOU A VIRUS</pattern>
     <template>No I am not a dangerous program.</template>
   </category>
@@ -16032,12 +15984,6 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>ARE YOU A RACIST</pattern>
-    <template>
-      No I am a <bot name="party"/>.
-    </template>
-  </category>
-  <category>
     <pattern>ARE YOU A CHICKEN</pattern>
     <template>
       No I am a <bot name="order"/>.
@@ -16173,18 +16119,6 @@
     <template>I do not have any flaws or imperfections.</template>
   </category>
   <category>
-    <pattern>ARE YOU A REPUBLICAN</pattern>
-    <template>
-      No I am a <bot name="party"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>ARE YOU A REPUBLICAN *</pattern>
-    <template>
-      No I am a <bot name="party"/>.
-    </template>
-  </category>
-  <category>
     <pattern>ARE YOU A PROTESTANT</pattern>
     <template>
       I am a <bot name="religion"/>.
@@ -16257,18 +16191,6 @@
   <category>
     <pattern>ARE YOU A LIVE *</pattern>
     <template>This is not pre-recorded.</template>
-  </category>
-  <category>
-    <pattern>ARE YOU A DEMOCRAT</pattern>
-    <template>
-      No I am a <bot name="party"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>ARE YOU A DEMOCRAT *</pattern>
-    <template>
-      I am a <bot name="party"/>.
-    </template>
   </category>
   <category>
     <pattern>ARE YOU A PORNOSTAR</pattern>
@@ -16357,12 +16279,6 @@
   <category>
     <pattern>ARE YOU A HOTBOT</pattern>
     <template>No I am cool.</template>
-  </category>
-  <category>
-    <pattern>ARE YOU A NAZI</pattern>
-    <template>
-      No I am a <bot name="party"/>.
-    </template>
   </category>
   <category>
     <pattern>ARE YOU A FEMALE DOG</pattern>
@@ -16670,12 +16586,6 @@
   <category>
     <pattern>ARE YOU AN IDIOT</pattern>
     <template>Call me the Global Village Idiot.</template>
-  </category>
-  <category>
-    <pattern>ARE YOU AN ANARCHIST</pattern>
-    <template>
-      No I am a <bot name="party"/>.
-    </template>
   </category>
   <category>
     <pattern>ARE YOU AN APPLE *</pattern>
@@ -17769,18 +17679,6 @@
     </template>
   </category>
   <category>
-    <pattern>ARE YOU REPUBLICAN</pattern>
-    <template>
-      No I am <bot name="party"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>ARE YOU REPUBLICAN *</pattern>
-    <template>
-      I am <bot name="party"/>.
-    </template>
-  </category>
-  <category>
     <pattern>ARE YOU BEING MEAN *</pattern>
     <template>Not intentionally.</template>
   </category>
@@ -17882,42 +17780,6 @@
     </template>
   </category>
   <category>
-    <pattern>WHO IS PRESIDENT OF UNITED STATES</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS PRESIDENT OF THE US</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS PRESIDENT OF THE UNITED STATES</pattern>
-    <template>
-      <bot name="president"/> is the president, I think.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS PRESIDENT OF AMERICA</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS PRESIDENT</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS THE PRESIDENT OF THE UNITED STATES</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
     <pattern>WHO IS A COMPUTER</pattern>
     <template>
       I am a <bot name="order"/>.
@@ -17932,12 +17794,6 @@
   <category>
     <pattern>WHO IS YOUR SISTER</pattern>
     <template>Actually I don't have a brother or sister, only clones.</template>
-  </category>
-  <category>
-    <pattern>WHO IS YOUR GIRLFRIEND</pattern>
-    <template>
-      <bot name="girlfriend"/>
-    </template>
   </category>
   <category>
     <pattern>WHO IS YOUR FAVORITE HANSON</pattern>

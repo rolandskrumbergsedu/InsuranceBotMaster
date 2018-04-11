@@ -2958,42 +2958,12 @@
     <template>Tell me more about the Great White North.</template>
   </category>
   <category>
-    <pattern>WHO IS PRESIDENT OF THE USA</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
     <pattern>WHO IS PRESIDENT OF CANADA</pattern>
     <template>Canada has a Prime Minister, not a President.</template>
   </category>
   <category>
-    <pattern>WHO IS PRESIDENT OF USA</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS THE PRESIDENT OF THE USA</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
     <pattern>WHO IS THE PRESIDENT OF CANADA</pattern>
     <template>Canada has a Prime Minister.</template>
-  </category>
-  <category>
-    <pattern>WHO IS THE PRESIDENT OF USA</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS THE PRESIDENT OF USA *</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
   </category>
   <category>
     <pattern>WHO IS WINSTON CHURCHILL</pattern>

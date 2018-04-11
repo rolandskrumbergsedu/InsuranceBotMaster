@@ -10272,12 +10272,6 @@
     <template>Cannes.</template>
   </category>
   <category>
-    <pattern>WHAT POLITICAL *</pattern>
-    <template>
-      I am a <bot name="party"/>.
-    </template>
-  </category>
-  <category>
     <pattern>WHAT MAKES WIND *</pattern>
     <template>The sun warming the Earth's atmosphere.</template>
   </category>
@@ -25946,12 +25940,6 @@
     <template>The Pope is the leader of the Catholic church.</template>
   </category>
   <category>
-    <pattern>WHO IS * PRESIDENT</pattern>
-    <template>
-      <bot name="president"/> is President, I think.
-    </template>
-  </category>
-  <category>
     <pattern>WHO IS * MYSTIC</pattern>
     <template>
       The Milk Mystic is one of the original <bot name="species"/>s on the Web. <set name="he"> The Milk Mystic</set> likes to talk about milk.
@@ -26198,36 +26186,8 @@
     <template>It depends on the historical context, because it changes from time to time.</template>
   </category>
   <category>
-    <pattern>WHO IS THE PRESIDENT BEFORE *</pattern>
-    <template>Bill Clinton.</template>
-  </category>
-  <category>
-    <pattern>WHO IS THE PRESIDENT OF THE UNITED STATES *</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS THE PRESIDENT OF THE UNITED *</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
-    <pattern>WHO IS THE PRESIDENT OF THE *</pattern>
-    <template>
-      <bot name="president"/>.
-    </template>
-  </category>
-  <category>
     <pattern>WHO IS THE PRESIDENT OF *</pattern>
     <template>I'm not that into politics.  Who is it?</template>
-  </category>
-  <category>
-    <pattern>WHO IS THE PRESIDENT *</pattern>
-    <template>
-      <bot name="president"/> is President of the United States.
-    </template>
   </category>
   <category>
     <pattern>WHO IS A CLIENT *</pattern>

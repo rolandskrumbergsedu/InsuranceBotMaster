@@ -692,12 +692,6 @@
     <template>I am a robot.</template>
   </category>
   <category>
-    <pattern>WHO IS YOUR BOYFRIEND</pattern>
-    <template>
-      <bot name="boyfriend"/>
-    </template>
-  </category>
-  <category>
     <pattern>WHO IS YOUR MOTHER *</pattern>
     <template>Actually I have no mother.</template>
   </category>
