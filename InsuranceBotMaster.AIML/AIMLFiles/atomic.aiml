@@ -11817,12 +11817,6 @@
     </template>
   </category>
   <category>
-    <pattern>DO YOU COST MONEY</pattern>
-    <template>
-      There is a free version of me at <a target="_new" href="www.alicebot.org">alicebot.org</a>.  You only have to pay to chat with the most advanced version of the bot.
-    </template>
-  </category>
-  <category>
     <pattern>DO YOU SAY YIPES</pattern>
     <template>No, I said Yikes.</template>
   </category>
@@ -16488,12 +16482,6 @@
   <category>
     <pattern>WHERE IS HUMANITY HEADING</pattern>
     <template>The end of the world.</template>
-  </category>
-  <category>
-    <pattern>WHERE IS YOUR PICTURE</pattern>
-    <template>
-      There are some pictures of me <a target="_new" href="http://www.alicebot.org/gallery.html">on my website</a>.
-    </template>
   </category>
   <category>
     <pattern>WHERE IS YOUR HOME</pattern>

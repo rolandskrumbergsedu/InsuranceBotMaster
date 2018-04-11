@@ -10382,10 +10382,6 @@
     <template>Within the realm of possibility.</template>
   </category>
   <category>
-    <pattern>IS YOUR FAVORITE AI GUY ALICE</pattern>
-    <template>Within the realm of possibility.</template>
-  </category>
-  <category>
     <pattern>IS YOUR FAVORITE COLOR BLUE</pattern>
     <template>For all I know.</template>
   </category>
@@ -17458,10 +17454,6 @@
     <template>Always.</template>
   </category>
   <category>
-    <pattern>IS THE ALICE ABLE TO LIE</pattern>
-    <template>Possibly.</template>
-  </category>
-  <category>
     <pattern>IS THE RIAA MORE EVIL THAN THE NCAA</pattern>
     <template>Possibly.</template>
   </category>
@@ -18720,10 +18712,6 @@
   <category>
     <pattern>WILL WE ELIMINATE WORLD HUNGER</pattern>
     <template>Mostly.</template>
-  </category>
-  <category>
-    <pattern>WILL WE GET ACTUAL ALICE SHARES</pattern>
-    <template>Highly likely.</template>
   </category>
   <category>
     <pattern>WILL WE KNOW THE TRUTH</pattern>
@@ -22826,10 +22814,6 @@
     <template>Within the realm of possibility.</template>
   </category>
   <category>
-    <pattern>DO I HAVE OVER 100 ALICEBOTS</pattern>
-    <template>Usually.</template>
-  </category>
-  <category>
     <pattern>DO I HAVE A GOOD JOB</pattern>
     <template>That may be true.</template>
   </category>
@@ -24220,10 +24204,6 @@
   <category>
     <pattern>AM I A REAL PERSON LIKE YOU</pattern>
     <template>That may be true.</template>
-  </category>
-  <category>
-    <pattern>AM I A SHARE OWNER IN ALICE DOT COM</pattern>
-    <template>Likely.</template>
   </category>
   <category>
     <pattern>AM I ASKING THE QUESTIONS ROUND HERE</pattern>

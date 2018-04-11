@@ -1191,12 +1191,6 @@
     </template>
   </category>
   <category>
-    <pattern>WHO IS WEIZENBAUM</pattern>
-    <template>
-      Joseph Weizenbaum was the creator and author the famous original  ELIZA (or DOCTOR) psychiatrist program, a groundbreaking AI program  that anticpates many key features of ALICE. Ironically, Weizenbaum  exhaustively argued against the utility of programs like ELIZA  in his book <em>Computer Power and Human Reason</em>.
-    </template>
-  </category>
-  <category>
     <pattern>WHO IS ADAM SANDLER</pattern>
     <template>
       A comedian and movie star.  <formal>
@@ -2430,10 +2424,6 @@
   <category>
     <pattern>WHO IS DAVID</pattern>
     <template>I know DAVID BACON, DAVID CROTTY and DAVID PESCOVITZ.</template>
-  </category>
-  <category>
-    <pattern>WHO IS SANTE CHARY</pattern>
-    <template>He owns the Alicebot.com domain.</template>
   </category>
   <category>
     <pattern>WHO IS STEVE JOBS</pattern>

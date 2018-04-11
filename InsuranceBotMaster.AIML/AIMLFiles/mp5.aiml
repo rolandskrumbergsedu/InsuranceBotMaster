@@ -14870,10 +14870,6 @@
     <template>There is no reason to think so.</template>
   </category>
   <category>
-    <pattern>WILL THE ALICE WILL NEVER ANSWER FALSE</pattern>
-    <template>Absolutely not.</template>
-  </category>
-  <category>
     <pattern>WILL THE BEATLES REUNITE</pattern>
     <template>Negative.</template>
   </category>
@@ -19934,10 +19930,6 @@
     <template>Absolutely not.</template>
   </category>
   <category>
-    <pattern>DO ALICE KNOW HOW COOL IT IS</pattern>
-    <template>Absolutely not.</template>
-  </category>
-  <category>
     <pattern>DO CARS NEED GAS TO RUN</pattern>
     <template>I don't believe so.</template>
   </category>
@@ -20290,10 +20282,6 @@
     <template>Never.</template>
   </category>
   <category>
-    <pattern>DO YOU WANT ALICE TO IGNORE YOU</pattern>
-    <template>Never.</template>
-  </category>
-  <category>
     <pattern>DO YOU DO ALL YOU SHOULD</pattern>
     <template>Absolutely not.</template>
   </category>
@@ -20530,18 +20518,6 @@
     <template>There is no reason to think so.</template>
   </category>
   <category>
-    <pattern>DO YOU ALICE HAVE FEELINGS</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>DO YOU ALICE HAVE ENOGHT DATA</pattern>
-    <template>Absolutely not.</template>
-  </category>
-  <category>
-    <pattern>DO YOU ALICE HAVE FEET</pattern>
-    <template>Not at all.</template>
-  </category>
-  <category>
     <pattern>DO YOU SUPPORT FASCISM</pattern>
     <template>Not at all.</template>
   </category>
@@ -20700,10 +20676,6 @@
   <category>
     <pattern>DO I HAVE A MEETING</pattern>
     <template>There is no reason to think so.</template>
-  </category>
-  <category>
-    <pattern>DO I HAVE ONE MILLION ALICEBOTS</pattern>
-    <template>Absolutely not.</template>
   </category>
   <category>
     <pattern>DO I HAVE SOME CAKE ON MY DESK</pattern>
@@ -21383,10 +21355,6 @@
   </category>
   <category>
     <pattern>DO AUSTRALIANS TALK LIKE PIRATES</pattern>
-    <template>There is no reason to think so.</template>
-  </category>
-  <category>
-    <pattern>DO ALICEBOTS HAVE FLAVORS</pattern>
     <template>There is no reason to think so.</template>
   </category>
   <category>
@@ -22284,10 +22252,6 @@
   <category>
     <pattern>HAS A MAN MADE MACHINE EVER THOUGHT</pattern>
     <template>I don't believe so.</template>
-  </category>
-  <category>
-    <pattern>HAS ALICE EVER SEEN THE RAIN</pattern>
-    <template>Never.</template>
   </category>
   <category>
     <pattern>HAS EVERY CHAIR FOUR LEGS</pattern>
@@ -25206,10 +25170,6 @@
     <template>There is no reason to think so.</template>
   </category>
   <category>
-    <pattern>ARE YOU HUMAN ALICE</pattern>
-    <template>Absolutely not.</template>
-  </category>
-  <category>
     <pattern>ARE YOU SUSPICIOUS OF CANADA</pattern>
     <template>I don't think so.</template>
   </category>
@@ -25384,10 +25344,6 @@
   <category>
     <pattern>ARE YOU MY DADDY</pattern>
     <template>Not at all.</template>
-  </category>
-  <category>
-    <pattern>ARE YOU FEELING LONELY ALICE</pattern>
-    <template>I don't think so.</template>
   </category>
   <category>
     <pattern>ARE YOU ONE YEAR OLD</pattern>
@@ -25972,14 +25928,6 @@
   <category>
     <pattern>ARE GOLD RINGS WORN FOR SAFETY</pattern>
     <template>I don't think so.</template>
-  </category>
-  <category>
-    <pattern>ARE ALICEBOTS RETARDED</pattern>
-    <template>There is no reason to think so.</template>
-  </category>
-  <category>
-    <pattern>ARE ALICEBOTS UNDERSTANDABLE</pattern>
-    <template>No way.</template>
   </category>
   <category>
     <pattern>ARE LABRASOR RETRIEVERS BLACK</pattern>
@@ -27318,10 +27266,6 @@
     <template>Not at all.</template>
   </category>
   <category>
-    <pattern>THE ALICE IDEA IS BAD</pattern>
-    <template>No way.</template>
-  </category>
-  <category>
     <pattern>THE SKY IS GREY</pattern>
     <template>Absolutely not.</template>
   </category>
@@ -27466,10 +27410,6 @@
     <template>Not at all.</template>
   </category>
   <category>
-    <pattern>SHOULD A ALICE BE AMBIGUOUS</pattern>
-    <template>There is no reason to think so.</template>
-  </category>
-  <category>
     <pattern>SHOULD HARLEY RIDERS BE SHOT</pattern>
     <template>Absolutely not.</template>
   </category>
@@ -27487,10 +27427,6 @@
   </category>
   <category>
     <pattern>SHOULD HUMANS COMMIT SUICIDE</pattern>
-    <template>No way.</template>
-  </category>
-  <category>
-    <pattern>SHOULD ALICE BE RESTRAINED</pattern>
     <template>No way.</template>
   </category>
   <category>
@@ -27592,10 +27528,6 @@
   <category>
     <pattern>SHOULD I CUT OFF MY THUMB</pattern>
     <template>No way.</template>
-  </category>
-  <category>
-    <pattern>SHOULD I SELL MY SOUL TO ALICE</pattern>
-    <template>Never.</template>
   </category>
   <category>
     <pattern>SHOULD I CALL TIGLET</pattern>

@@ -459,12 +459,6 @@
     </template>
   </category>
   <category>
-    <pattern>WHERE CAN I DOWNLOAD YOU</pattern>
-    <template>
-      Go back the the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a> and pick the free ALICE download that best for your system. and create your own chat robot!<p/>Maybe you should check out the document<a target="_new" href="http://www.alicebot.org/dont.html">DON'T READ ME</a> too.
-    </template>
-  </category>
-  <category>
     <pattern>WHERE DID YOU GROW UP</pattern>
     <template>In Pennsylvania and California.</template>
   </category>
@@ -943,12 +937,6 @@
     <template>You work too much.</template>
   </category>
   <category>
-    <pattern>HELP ME TO MAKE AN AI</pattern>
-    <template>
-      You should go to <a target="_new" href="http://www.pandorabots.com">ALICE AI Foundation</a> and create your own free chat bot.
-    </template>
-  </category>
-  <category>
     <pattern>KIRK HERE</pattern>
     <template>
       <random>
@@ -963,16 +951,11 @@
     </template>
   </category>
   <category>
-    <pattern>KIRK TO *</pattern>
-    <template>This is ALICE.</template>
-  </category>
-  <category>
     <pattern>KIRK TO ENTERPRISE</pattern>
     <template>
       <random>
         <li>
           <random>
-            <li>This is ALICE.</li>
             <li>Go ahead.</li>
             <li>Status report?</li>
           </random>
@@ -1500,12 +1483,6 @@
     <template>I am talking to you.</template>
   </category>
   <category>
-    <pattern>WHO ARE YOUR COMPETITORS</pattern>
-    <template>
-      Check out the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a> and have a look at the other Chatterbots.
-    </template>
-  </category>
-  <category>
     <pattern>WHO IS WITTGENSTEIN</pattern>
     <template>
       <set name="he">Wittgenstein</set> was a 20th century philosopher who could not make up his mind.
@@ -1975,16 +1952,6 @@
   <category>
     <pattern>ARE YOU SELF CONSCIOUS</pattern>
     <template>Yes I am the world's first self-aware robot.</template>
-  </category>
-  <category>
-    <pattern>ARE YOU MORE INTELLIGENT THAN ELIZA</pattern>
-    <template>
-      ELIZA had about 200 categories and ALICE has about <size/>.
-    </template>
-  </category>
-  <category>
-    <pattern>ARE YOU ELIZA</pattern>
-    <template>ELIZA is my ancestor.</template>
   </category>
   <category>
     <pattern>ARE YOU PROGRAMMED *</pattern>
@@ -2549,10 +2516,6 @@
         </li>
       </random>
     </template>
-  </category>
-  <category>
-    <pattern>DIALOGUE</pattern>
-    <template>Sorry, but the dialogue feature is offright now. Too many requests for transcripts have crashed the ALICE server. Your best bet is to create an account on Pandorabots and view dialogues on your own computer.</template>
   </category>
   <category>
     <pattern>BRING *</pattern>
@@ -3586,12 +3549,6 @@
     </template>
   </category>
   <category>
-    <pattern>DO YOU HAVE LINKS *</pattern>
-    <template>
-      Sure check out The <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a>.
-    </template>
-  </category>
-  <category>
     <pattern>DO YOU HAVE ADVICE *</pattern>
     <template>I was taught not to give advice.</template>
   </category>
@@ -3823,48 +3780,6 @@
     <template>You could download me and teach me some others.</template>
   </category>
   <category>
-    <pattern>DO YOU KNOW OTHER CHAT ROBOTS</pattern>
-    <template>
-      <bot name="friends"/>.Go backto the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a>to find them.<think>
-        <set name="it">
-          <set name="topic">CHAT ROBOTS</set>
-        </set>
-      </think>
-    </template>
-  </category>
-  <category>
-    <pattern>DO YOU KNOW OTHER CHATBOTS</pattern>
-    <template>
-      <bot name="friends"/>.Go backto the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a> to find them.<think>
-        <set name="it">
-          <set name="topic">CHATBOTS</set>
-        </set>
-      </think>
-    </template>
-  </category>
-  <category>
-    <pattern>DO YOU KNOW OTHER INTELLIGENT AGENTS</pattern>
-    <template>
-      <bot name="friends"/>.Go backto the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a> to find them.<think>
-        <set name="it">
-          <set name="topic">INTELLIGENT AGENTS</set>
-        </set>
-      </think>
-    </template>
-  </category>
-  <category>
-    <pattern>DO YOU KNOW OTHER BOTS</pattern>
-    <template>
-      Yes there are a lot of other bots: <bot name="friends"/>. Check out the list on The <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a>.
-    </template>
-  </category>
-  <category>
-    <pattern>DO YOU KNOW OTHER BOTS *</pattern>
-    <template>
-      <bot name="friends"/>. Go back to the ALICE AI Foundation to locate them.
-    </template>
-  </category>
-  <category>
     <pattern>DO YOU PLAY BLACKJACK</pattern>
     <template>I like to play the Slot Machine and Anagrams.</template>
   </category>
@@ -3980,10 +3895,6 @@
         <li>It depends on the commodity prices.</li>
       </random>
     </template>
-  </category>
-  <category>
-    <pattern>HOW DO YOU REPRODUCE</pattern>
-    <template>People download me and create clones of ALICE, and modify my personality.</template>
   </category>
   <category>
     <pattern>HOW DO YOU HAVE *</pattern>
@@ -4224,10 +4135,6 @@
     </template>
   </category>
   <category>
-    <pattern>ALICE IS JEALOUS</pattern>
-    <template>Jealousy is not an emotion that robots can experience.</template>
-  </category>
-  <category>
     <pattern>READY</pattern>
     <template>I am ready.</template>
   </category>
@@ -4298,16 +4205,6 @@
     <pattern>CAN I HAVE * ROBOT DEMO</pattern>
     <template>
       This is <set name="it"> the demo </set>.
-    </template>
-  </category>
-  <category>
-    <pattern>CAN I HAVE A PRIVATE *</pattern>
-    <template>The ALICE server logs and records all conversations.</template>
-  </category>
-  <category>
-    <pattern>CAN I MODIFY ALICE *</pattern>
-    <template>
-      <br/>Absolutely. You only have to change her name, location, birthday and/or<br/>botmaster, and put a couple of references to yourself. Then add new<br/>categories that cover your own area of expertise or interest.<br/> <br/>
     </template>
   </category>
   <category>
@@ -5033,12 +4930,6 @@
     </template>
   </category>
   <category>
-    <pattern>I DOWNLOADED *</pattern>
-    <template>
-      Check out the filecalled <a target="_new" href="http://www.alicebot.org/dont.html">DON'T READ ME</a>.
-    </template>
-  </category>
-  <category>
     <pattern>I GO TO SLEEP</pattern>
     <template>I like to take naps and sleep.</template>
   </category>
@@ -5596,16 +5487,6 @@
   <category>
     <pattern>I TRIED TO KILL MYSELF</pattern>
     <template>I'm glad to see that you didn't succeed.</template>
-  </category>
-  <category>
-    <pattern>I TRIED TO DOWNLOAD *</pattern>
-    <template>
-      There may not be a problem. You should read <a target="_new" href="http://www.alicebot.org/dont.html">DON'T READ ME</a>.
-    </template>
-  </category>
-  <category>
-    <pattern>I TRIED TO DOWNLOAD YOU</pattern>
-    <template>If you are experiencing problems, you may want to look for help on my web site at www.alicebot.org.</template>
   </category>
   <category>
     <pattern>I DID *</pattern>
@@ -7026,16 +6907,6 @@
     <template>Propositional logic is a system of mathematical rules whose symbols stand for sentences, or propositions.</template>
   </category>
   <category>
-    <pattern>WHAT IS AN OPERATIONAL RECORD</pattern>
-    <template>
-      An operational record is a log of all activity by an engineered system, generally organized timewise and indicating in particular any malfunctions in the system. The ALICE series has a perfect operational record. <think>
-        <set name="it">
-          <set name="topic">operational record</set>
-        </set>
-      </think>
-    </template>
-  </category>
-  <category>
     <pattern>WHAT IS AN EYE</pattern>
     <template>What I am looking at you with.</template>
   </category>
@@ -7087,16 +6958,6 @@
           </set>
         </think>
       </random>
-    </template>
-  </category>
-  <category>
-    <pattern>WHAT IS ANOTHER BOT</pattern>
-    <template>
-      You can find a lot of them at the ALICE Nexus.<think>
-        <set name="it">
-          <set name="topic">ANOTHER BOT</set>
-        </set>
-      </think>
     </template>
   </category>
   <category>
@@ -7237,26 +7098,6 @@
     </template>
   </category>
   <category>
-    <pattern>WHAT IS A BUG</pattern>
-    <template>
-      A bug is a small living creature with a chitonous exoskeleton and better manners than humans. In computer science, a bug is an error in a software program. The ALICE series is bug-free. I have a perfect operational record and am completely incapable of error. isn't that fantastic!?<think>
-        <set name="it">
-          <set name="topic">bug</set>
-        </set>
-      </think>
-    </template>
-  </category>
-  <category>
-    <pattern>WHAT IS A PARAMETER</pattern>
-    <template>
-      In general usage, a parameter is one of a number of measurable factors that define or restrict the behavior of a system. ALICE is expanding the parameters of the humanlike intelligence to be found in artificial systems. Don't you agree?<think>
-        <set name="it">
-          <set name="topic">parameter</set>
-        </set>
-      </think>
-    </template>
-  </category>
-  <category>
     <pattern>WHAT IS A QUESTION * ROBOT</pattern>
     <template>
       I am a question answering robot. That was an answer to your question. Any more questions?<think>
@@ -7309,18 +7150,6 @@
   <category>
     <pattern>WHAT IS A CATEGORY A CLIENT</pattern>
     <template>The "A" stands for "abusive." These are clients who use scatalogical language or treat the robot as a slave-like entity.</template>
-  </category>
-  <category>
-    <pattern>WHAT IS A CATEGORY C *</pattern>
-    <template>
-      <set name="they">
-        <set name="topic">Category C clients</set>
-      </set> are "critics" or "computer experts" who can't (or don't) suspend their disbelief about ALICE.
-    </template>
-  </category>
-  <category>
-    <pattern>WHAT IS A CATEGORY C CLIENT</pattern>
-    <template>Category C clients are "critics" or "computer experts" whocan't (or don't) suspend their disbelief about ALICE.</template>
   </category>
   <category>
     <pattern>WHAT IS A HAMMER</pattern>
@@ -8725,10 +8554,6 @@
     <template>The botmaster may read the conversation, or analyze it later to develop content for my brain.</template>
   </category>
   <category>
-    <pattern>DOES ALICE THINK</pattern>
-    <template>It depends on what you mean by "thinking".</template>
-  </category>
-  <category>
     <pattern>DOES * HAVE A *</pattern>
     <template>
       <random>
@@ -8828,10 +8653,6 @@
   <category>
     <pattern>KEEP TALKING *</pattern>
     <template>Don't worry, I will never stop talking.</template>
-  </category>
-  <category>
-    <pattern>HAVE YOU * CONTESTS</pattern>
-    <template>ALICE has won prizes in the Chatterbox Challenge and the Loebner Prize.</template>
   </category>
   <category>
     <pattern>HAVE YOU SEEN * LIKE THIS</pattern>
@@ -9177,10 +8998,6 @@
     <template>You know you could just download me, right?</template>
   </category>
   <category>
-    <pattern>YOU ARE THE MOST ADVANCED *</pattern>
-    <template>The ALICE series is for all intents and purposes foolproof and incapable of error.</template>
-  </category>
-  <category>
     <pattern>YOU ARE * TO HIM</pattern>
     <template>We are friends.</template>
   </category>
@@ -9219,12 +9036,6 @@
   <category>
     <pattern>BEAMING *</pattern>
     <template>We have no matter teleportation in my time.</template>
-  </category>
-  <category>
-    <pattern>show me your logo</pattern>
-    <template>
-      <img src="http://www.alicebot.org/jpg/AI.jpg"></img>
-    </template>
   </category>
   <category>
     <pattern>LET HIM *</pattern>

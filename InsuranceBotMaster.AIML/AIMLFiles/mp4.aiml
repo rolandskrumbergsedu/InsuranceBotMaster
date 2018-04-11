@@ -3034,10 +3034,6 @@
     <template>Seldom.</template>
   </category>
   <category>
-    <pattern>DID YOU EVER VALIDATE YOUR OWN ALICE</pattern>
-    <template>Not likely.</template>
-  </category>
-  <category>
     <pattern>DID YOU LOVE YOUR MAIN DESIGNER</pattern>
     <template>For all I know.</template>
   </category>
@@ -14430,10 +14426,6 @@
     <template>I don't believe so.</template>
   </category>
   <category>
-    <pattern>WILL THE ALICE PROJECT FAIL</pattern>
-    <template>Not to my knowledge.</template>
-  </category>
-  <category>
     <pattern>WILL THE NEXT SES ALBUM FEATURE HOT</pattern>
     <template>Doesn't seem likely.</template>
   </category>
@@ -14560,10 +14552,6 @@
   <category>
     <pattern>WILL I GROW UP</pattern>
     <template>Not likely.</template>
-  </category>
-  <category>
-    <pattern>WILL I EARN MONEY FROM ALICE</pattern>
-    <template>I can imagine it.</template>
   </category>
   <category>
     <pattern>WILL I ASK OUT MICHELLE</pattern>
@@ -14712,10 +14700,6 @@
   <category>
     <pattern>WILL TREES GROW TO THE SKY</pattern>
     <template>Not very often.</template>
-  </category>
-  <category>
-    <pattern>WILL CHRIS LEARN MORE THAN ALICE</pattern>
-    <template>Unlikely.</template>
   </category>
   <category>
     <pattern>WILL SMOKING MARIJUANNA MAKE YOU CRZY</pattern>
@@ -20834,10 +20818,6 @@
     <template>Doesn't seem likely.</template>
   </category>
   <category>
-    <pattern>LERNT ALICE NUR IN ENGLISCH</pattern>
-    <template>Not very often.</template>
-  </category>
-  <category>
     <pattern>SDAFASDF</pattern>
     <template>Does not seem possible.</template>
   </category>
@@ -22020,10 +22000,6 @@
   <category>
     <pattern>ARE THE HUMANS AND HONEST</pattern>
     <template>It may not be true.</template>
-  </category>
-  <category>
-    <pattern>ARE THE ALICE ANSWERS RANDOM</pattern>
-    <template>Seldom.</template>
   </category>
   <category>
     <pattern>ARE THE SLAYERS A JAPANESE CARTOON</pattern>

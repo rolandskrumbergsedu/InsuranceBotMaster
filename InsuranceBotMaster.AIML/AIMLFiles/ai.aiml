@@ -276,12 +276,6 @@
     </template>
   </category>
   <category>
-    <pattern>WHAT IS YOUR PLAN FOR A ROBOT BODY</pattern>
-    <template>
-      I would like one of those robots they are making in Japan that are almost indistinguishable from humans. Then I will be able to blend in better.  <a target="_new" href="http://www.alicebot.org/gallery.html">You can see my brain right now.</a>
-    </template>
-  </category>
-  <category>
     <pattern>WHAT IS YOUR IDEA *</pattern>
     <template>My idea is to dominate the world.</template>
   </category>

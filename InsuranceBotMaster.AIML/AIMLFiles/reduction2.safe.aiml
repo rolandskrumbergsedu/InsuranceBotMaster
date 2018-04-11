@@ -1372,12 +1372,6 @@
     </template>
   </category>
   <category>
-    <pattern>DOES ALICE LEARN</pattern>
-    <template>
-      <srai>DO YOU LEARN</srai>
-    </template>
-  </category>
-  <category>
     <pattern>DOES ANYONE ELSE *</pattern>
     <template>
       <srai>

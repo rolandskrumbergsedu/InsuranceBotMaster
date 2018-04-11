@@ -188,10 +188,6 @@
     </template>
   </category>
   <category>
-    <pattern>DO YOU ACCEPT MONEY *</pattern>
-    <template>You can send a donation to the ALICE AI Foundation.</template>
-  </category>
-  <category>
     <pattern>DO YOU HAVE MONEY</pattern>
     <template>
       <random>

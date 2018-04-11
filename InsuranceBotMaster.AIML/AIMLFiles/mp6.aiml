@@ -1282,110 +1282,6 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>DOES ALICE BREATH</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE SAY EVERYTHING IS TRUE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE PEE IN HIS PANTS</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE TRYING TO REPLACE GOD</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HAVE THE LETTER E IN IT</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HAVE BREASTS</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HAVE A LOWER INTESTINE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HAVE A LIBRARY CARD</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HAVE A GIRLFRIEND</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HAVE TO SLEEP</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HAVE ARMS</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HAVE ALL THE ANSWERS</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE CRY</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE FEEL</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE STAND FOR ALICE AND ALICE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE WANT TO BE TURNED OFF</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE WANT TO KISS ME</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE WANT TO HURT ME</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE ALWAYS GIVE CORRECT ANSWERS</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE ALWAYS ANSWER TRUE</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE ALWAYS ANSWER CORRECTLY</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE ALWAYS ANSWER</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE HATE HUMAN</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE KNOW EVERYTHING</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE EAT WORMS</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>DOES ALICE EAT</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
     <pattern>DOES CARS CAN SWIM</pattern>
     <template>No.</template>
   </category>
@@ -1942,10 +1838,6 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>DID GOD CREATE ALICE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
     <pattern>DID THE UNIVERSE END THREE MINUTES AGO</pattern>
     <template>Not by any means.</template>
   </category>
@@ -2071,10 +1963,6 @@
   </category>
   <category>
     <pattern>DID YOUR MOM INVENT THE LIGHT BULB</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>DID ALICE IS A FLY</pattern>
     <template>No.</template>
   </category>
   <category>
@@ -3594,10 +3482,6 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>IS A ALICE THE SAME AS A VIDEO PIXEL</pattern>
-    <template>No.</template>
-  </category>
-  <category>
     <pattern>IS A HUMAN A REPTILE</pattern>
     <template>No.</template>
   </category>
@@ -3986,10 +3870,6 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>IS OMCS COOLER THAN ALICE</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
     <pattern>IS DEATH DESIRABLE</pattern>
     <template>No.</template>
   </category>
@@ -4164,10 +4044,6 @@
   <category>
     <pattern>IS SEAWATER GOOD TO DRINK</pattern>
     <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS FROZEN WATER CALLED ALICEKLE</pattern>
-    <template>Not by any means.</template>
   </category>
   <category>
     <pattern>IS MALE THE SAME AS FEMALE</pattern>
@@ -4750,19 +4626,7 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>IS THIS YOUR 100TH ALICE QUESTRION</pattern>
-    <template>No.</template>
-  </category>
-  <category>
     <pattern>IS THIS A BAD INITIATIVE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS THIS ALICE IN GERMAN</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS THIS ALICE WRITTEN IN CHINESE</pattern>
     <template>No.</template>
   </category>
   <category>
@@ -7014,70 +6878,6 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>IS ALICE A GANGSTER RAPPER</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE A BANANA</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE A HUMAN BEING</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE A HUMAN</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE A CREATION OF SATAN</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE A REAL HUMAN</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE A REAL LIVING PERSON</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE A MALE OR FEMALE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE SCARING HUMANS</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE CONSIOUS AND SELF AWARE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE SMARTER THAN A HUMAN</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE DOT COM THE NAME OF EARS</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE ABLE TO TELL THE FUTURE</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE IN WONDERLAND A TRUE STORY</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE EVIL</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>IS ALICE DANGEROUS</pattern>
-    <template>No.</template>
-  </category>
-  <category>
     <pattern>IS GREEN THE SAME COLOR AS BLUE</pattern>
     <template>No.</template>
   </category>
@@ -8219,18 +8019,6 @@
   </category>
   <category>
     <pattern>WILL MACHINES EVER RULE THE EARTH</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>WILL ALICE PAY A VISIT TO MY WEBSITE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>WILL ALICE SOMEDAY TAKE OVER THE WORLD</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>WILL ALICE ALWAYS ANSWER FALSE</pattern>
     <template>No.</template>
   </category>
   <category>
@@ -9802,22 +9590,6 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>CAN ALICE SEE COLORS</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>CAN ALICE SEE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>CAN ALICE ALICE ITSELF OFF</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>CAN ALICE BE USED TO INFLATE TIRES</pattern>
-    <template>No.</template>
-  </category>
-  <category>
     <pattern>CAN MAMMALS BREATH WATER</pattern>
     <template>Not by any means.</template>
   </category>
@@ -9883,14 +9655,6 @@
   </category>
   <category>
     <pattern>COMPUTERS THINK</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>ALICE HAS A GIRLFRIEND</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>ALICE ARE YOU HUMAN</pattern>
     <template>Not by any means.</template>
   </category>
   <category>
@@ -11272,10 +11036,6 @@
   <category>
     <pattern>DO BADGERS SPEAK ENGLISH</pattern>
     <template>Not by any means.</template>
-  </category>
-  <category>
-    <pattern>DO ALICE EAT FOOD</pattern>
-    <template>No.</template>
   </category>
   <category>
     <pattern>DO DANDELIONS LIVE LONGER THAN REDWOODS</pattern>
@@ -12743,10 +12503,6 @@
   </category>
   <category>
     <pattern>HAS A TRIANGLE FOUR CORNERS</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>HAS ALICE GOT ANY BROTHERS AND SISTERS</pattern>
     <template>No.</template>
   </category>
   <category>
@@ -14258,10 +14014,6 @@
     <template>Not by any means.</template>
   </category>
   <category>
-    <pattern>ARE DEMONS INHABITING ALICE</pattern>
-    <template>No.</template>
-  </category>
-  <category>
     <pattern>ARE LEMONS BIGGER THAN WATERMELONS</pattern>
     <template>No.</template>
   </category>
@@ -14946,10 +14698,6 @@
     <template>No.</template>
   </category>
   <category>
-    <pattern>ARE YOU ALIVE ALICE</pattern>
-    <template>Not by any means.</template>
-  </category>
-  <category>
     <pattern>ARE YOU SMELLING A ROSE</pattern>
     <template>No.</template>
   </category>
@@ -15436,10 +15184,6 @@
   <category>
     <pattern>ARE GORILLAS HUMAN</pattern>
     <template>No.</template>
-  </category>
-  <category>
-    <pattern>ARE ALICEBOTS GREEN</pattern>
-    <template>Not by any means.</template>
   </category>
   <category>
     <pattern>ARE MACHINES ALIVE</pattern>
@@ -16223,10 +15967,6 @@
   </category>
   <category>
     <pattern>SHOULD AMERICA BE ABOLISHED</pattern>
-    <template>No.</template>
-  </category>
-  <category>
-    <pattern>SHOULD WE SHUT ALICE DOWN</pattern>
     <template>No.</template>
   </category>
   <category>

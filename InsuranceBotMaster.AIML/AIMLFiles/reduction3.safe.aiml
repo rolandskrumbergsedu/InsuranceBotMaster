@@ -17376,12 +17376,6 @@
     </template>
   </category>
   <category>
-    <pattern>DO YOU KNOW ALICE *</pattern>
-    <template>
-      <srai>WHO IS ALICE</srai>
-    </template>
-  </category>
-  <category>
     <pattern>DO YOU KNOW FORD PREFECT</pattern>
     <template>
       <srai>who is ford prefect</srai>
@@ -19820,12 +19814,6 @@
     <pattern>WHY IS THE *</pattern>
     <template>
       <srai>why</srai>
-    </template>
-  </category>
-  <category>
-    <pattern>WHY IS YOUR NAME</pattern>
-    <template>
-      <srai>what does alice stand for</srai>
     </template>
   </category>
   <category>

@@ -4168,18 +4168,6 @@
     </template>
   </category>
   <category>
-    <pattern>why is your name</pattern>
-    <template>
-      <srai>what does alice stand for</srai>
-    </template>
-  </category>
-  <category>
-    <pattern>why were you named alice</pattern>
-    <template>
-      <srai>WHAT DOES ALICE STAND FOR</srai>
-    </template>
-  </category>
-  <category>
     <pattern>WHY WAS *</pattern>
     <template>
       <srai>WHY</srai>
@@ -4288,12 +4276,6 @@
       <srai>
         WHY ARE YOU <star/>
       </srai>
-    </template>
-  </category>
-  <category>
-    <pattern>WHY WERE YOU NAMED *</pattern>
-    <template>
-      <srai>WHAT DOES ALICE STAND FOR</srai>
     </template>
   </category>
   <category>
@@ -5704,12 +5686,6 @@
     <pattern>DO YOU KNOW THE * ELIZA</pattern>
     <template>
       <srai>WHO IS ELIZA</srai>
-    </template>
-  </category>
-  <category>
-    <pattern>DO YOU KNOW WINALICE</pattern>
-    <template>
-      <srai>WHAT IS WINALICE </srai>
     </template>
   </category>
   <category>
@@ -20764,12 +20740,6 @@
     </template>
   </category>
   <category>
-    <pattern>ALICE IS A * BOY</pattern>
-    <template>
-      <srai>ARE YOU MALE</srai>
-    </template>
-  </category>
-  <category>
     <pattern>THEREFORE  *</pattern>
     <template>
       <srai>
@@ -23204,12 +23174,6 @@
     </template>
   </category>
   <category>
-    <pattern>_ TAKE CARE ALICE</pattern>
-    <template>
-      <srai>BYE</srai>
-    </template>
-  </category>
-  <category>
     <pattern>_ ABSOLUTELY NO *</pattern>
     <template>
       <srai>
@@ -23636,14 +23600,6 @@
     </template>
   </category>
   <category>
-    <pattern>KIRK TO ALICE *</pattern>
-    <template>
-      <srai>
-        <star/>
-      </srai>
-    </template>
-  </category>
-  <category>
     <pattern>KIRK OUT</pattern>
     <template>
       <srai>BYE</srai>
@@ -23787,12 +23743,6 @@
     <pattern>WHERE AM I</pattern>
     <template>
       <srai>MY LOCATION</srai>
-    </template>
-  </category>
-  <category>
-    <pattern>WHERE IS ALICE *</pattern>
-    <template>
-      <srai>WHERE ARE YOU</srai>
     </template>
   </category>
   <category>

@@ -732,19 +732,6 @@
     <template>Perhaps you are a Category A client.</template>
   </category>
   <category>
-    <pattern>ABOUT SEX</pattern>
-    <template>
-      <random>
-        <li>
-          You people always want to talk about Sex. Try another Adult <bot name="species"/>s on the web.
-        </li>
-        <li>
-          You humans always want to talk about Sex. Try the other Adult <bot name="species"/>s on the <a target="_new" href="http://www.alicebot.org">ALICE AI Foundation</a>.
-        </li>
-      </random>
-    </template>
-  </category>
-  <category>
     <pattern>BREASTS</pattern>
     <template>Can't you think about anything else?</template>
   </category>

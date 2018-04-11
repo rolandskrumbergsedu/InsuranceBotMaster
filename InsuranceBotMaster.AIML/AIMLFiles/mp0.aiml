@@ -17098,10 +17098,6 @@
     <template>Yes.</template>
   </category>
   <category>
-    <pattern>WILL THE ALICE PROJECT EVER WORK</pattern>
-    <template>Yes.</template>
-  </category>
-  <category>
     <pattern>WILL HYDROGEN BURN EASILY</pattern>
     <template>Yes.</template>
   </category>
@@ -19463,10 +19459,6 @@
   </category>
   <category>
     <pattern>2000 OLMPICS ARE HELD IN SYDNEY</pattern>
-    <template>Yes.</template>
-  </category>
-  <category>
-    <pattern>ALICE PROGRAMMING HAS FLAWS</pattern>
     <template>Yes.</template>
   </category>
   <category>

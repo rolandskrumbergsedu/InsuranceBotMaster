@@ -526,12 +526,6 @@
     </template>
   </category>
   <category>
-    <pattern>I AM ALICE</pattern>
-    <template>
-      <srai>CALL ME ALICE</srai>
-    </template>
-  </category>
-  <category>
     <pattern>I AM JULIE</pattern>
     <template>
       <srai>CALL ME JULIE</srai>
