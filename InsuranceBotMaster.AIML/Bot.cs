@@ -351,23 +351,23 @@ namespace InsuranceBotMaster.AIML
             }
             if (!GlobalSettings.ContainsSettingCalled("name"))
             {
-                GlobalSettings.AddSetting("name", "Unknown");
+                GlobalSettings.AddSetting("name", "If bot");
             }
             if (!GlobalSettings.ContainsSettingCalled("botmaster"))
             {
-                GlobalSettings.AddSetting("botmaster", "Unknown");
+                GlobalSettings.AddSetting("botmaster", "creator");
             }
             if (!GlobalSettings.ContainsSettingCalled("master"))
             {
-                GlobalSettings.AddSetting("botmaster", "Unknown");
+                GlobalSettings.AddSetting("botmaster", "creator");
             }
             if (!GlobalSettings.ContainsSettingCalled("author"))
             {
-                GlobalSettings.AddSetting("author", "Nicholas H.Tollervey");
+                GlobalSettings.AddSetting("author", "Rolands Krumbergs");
             }
             if (!GlobalSettings.ContainsSettingCalled("location"))
             {
-                GlobalSettings.AddSetting("location", "Unknown");
+                GlobalSettings.AddSetting("location", "Riga");
             }
             if (!GlobalSettings.ContainsSettingCalled("gender"))
             {
@@ -375,15 +375,15 @@ namespace InsuranceBotMaster.AIML
             }
             if (!GlobalSettings.ContainsSettingCalled("birthday"))
             {
-                GlobalSettings.AddSetting("birthday", "2006/11/08");
+                GlobalSettings.AddSetting("birthday", "2018/12/04");
             }
             if (!GlobalSettings.ContainsSettingCalled("birthplace"))
             {
-                GlobalSettings.AddSetting("birthplace", "Towcester, Northamptonshire, UK");
+                GlobalSettings.AddSetting("birthplace", "Riga");
             }
             if (!GlobalSettings.ContainsSettingCalled("website"))
             {
-                GlobalSettings.AddSetting("website", "http://sourceforge.net/projects/InsuranceBotMaster.AIML");
+                GlobalSettings.AddSetting("website", "https://www.if.no/");
             }
             if (!GlobalSettings.ContainsSettingCalled("islogging"))
             {
@@ -399,7 +399,7 @@ namespace InsuranceBotMaster.AIML
             }
             if (!GlobalSettings.ContainsSettingCalled("culture"))
             {
-                GlobalSettings.AddSetting("culture", "en-US");
+                GlobalSettings.AddSetting("culture", "nb-no");
             }
             if (!GlobalSettings.ContainsSettingCalled("splittersfile"))
             {

@@ -1,11 +1,12 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
-namespace InsuranceBotMaster
+namespace InsuranceBotMaster.Controllers
 {
     [BotAuthentication]
     public class MessagesController : ApiController
@@ -16,6 +17,9 @@ namespace InsuranceBotMaster
         /// </summary>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
+            var logger = NLog.LogManager.GetCurrentClassLogger();
+            logger.Error($"Hit on post @ {DateTime.Now}");
+
             if (activity.Type == ActivityTypes.Message)
             {
                 await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());

@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
+using InsuranceBotMaster.Filters;
 
 namespace InsuranceBotMaster
 {
@@ -22,6 +24,9 @@ namespace InsuranceBotMaster
                 NullValueHandling = NullValueHandling.Ignore,
             };
 
+            config.Filters.Add(new CustomExceptionFilter());
+
+            config.Services.Add(typeof(IExceptionLogger), new GlobalExceptionLogger());
             // Web API configuration and services
 
             // Web API routes

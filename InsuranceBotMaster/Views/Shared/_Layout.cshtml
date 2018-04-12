@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IInsurance Bot Master</title>
+    <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="bot"></div>
+
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+    <script>
+        BotChat.App({
+            directLine: { secret: 'pvOMQHfzt_E.cwA.VT8.l1Im-L_ISt4J2sd_2wxvokTK4lqA_aS4ZWDBGPScQUU' },
+            user: { id: 'userid' },
+            bot: { id: 'InsuranceBotMaster' },
+            resize: 'detect'
+        },
+            document.getElementById("bot"));
+    </script>
+
+    @RenderBody()
+</body>
+</html>

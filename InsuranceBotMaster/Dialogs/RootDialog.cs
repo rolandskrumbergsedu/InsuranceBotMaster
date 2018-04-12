@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Runtime.Caching;
 using System.Threading.Tasks;
 using System.Web;
 using InsuranceBotMaster.AIML;
 using InsuranceBotMaster.AIML.Utils;
 using InsuranceBotMaster.LUIS;
 using InsuranceBotMaster.QnA;
+using InsuranceBotMaster.Translation;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
@@ -13,6 +15,8 @@ namespace InsuranceBotMaster.Dialogs
     [Serializable]
     public class RootDialog : IDialog<object>
     {
+        private Translator _translator = new Translator("29569f3847a84fa3ba411afdc2618e1e");
+
         public Task StartAsync(IDialogContext context)
         {
             context.Wait(MessageReceivedAsync);
@@ -22,57 +26,108 @@ namespace InsuranceBotMaster.Dialogs
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
-            var activity = await result as Activity;
+            try
+            {
+                var activity = await result as Activity;
 
-            var luisResult = await QueryLuisIntent(activity);
-            var qnaResult = await QueryQna(activity);
+                var utterance = await TranslateToEnglish(activity?.Text);
 
-            if (luisResult.TopScoringIntent.Score > 0.95)
-            {
-                await HandleLuisMessage(context, luisResult);
+                var luisResult = Task.Run(() => QueryLuisIntent(utterance));
+                var qnaResult = Task.Run(() => QueryQna(utterance));
+                var goalIsSet = GetUserGoal();
+
+                if (goalIsSet)
+                {
+
+                }
+                else
+                {
+                    luisResult.Wait();
+
+                    if (luisResult.Result.TopScoringIntent.Score > 0.90)
+                    {
+                        SaveUserGoal(true);
+
+                        // Load appropriate dialog
+                        await HandleLuisMessage(context, luisResult.Result);
+                    }
+                    else
+                    {
+                        qnaResult.Wait();
+                        if (qnaResult.Result.Answers[0].Score > 0.90)
+                        {
+                            await HandleQnaMessage(context, qnaResult.Result);
+                        }
+                        else
+                        {
+                            await HandleAimlMessage(context, utterance);
+                        }
+                    }
+
+                }
             }
-            else if (qnaResult.Answers[0].Score > 0.95)
+            catch (Exception ex)
             {
-                await HandleQnaMessage(context, qnaResult);
-            }
-            else
-            {
-                await HandleAimlMessage(context, activity);
+                var logger = NLog.LogManager.GetCurrentClassLogger();
+                logger.Error($"Exception: {ex.Message}");
+                logger.Error($"Stacktrace: {ex.StackTrace}");
             }
             
+
             context.Wait(MessageReceivedAsync);
         }
 
-        private async Task<LuisQueryResult> QueryLuisIntent(Activity activity)
+        private static bool GetUserGoal()
+        {
+            return false;
+        }
+
+        private static void SaveUserGoal(bool status)
+        {
+
+        }
+
+        private async Task<LuisQueryResult> QueryLuisIntent(string utterance)
         {
             var appId = "c3b286b3-832e-426b-b9e2-6d849d5a28c6";
             var luisKey = "92c76cdbf18c4d1db7c2e8e995e29ee2";
 
             var caller = new LuisCaller(appId, luisKey);
 
-            var utterance = activity.Text;
-
             var luisResult = await caller.QueryLuis(utterance);
 
             return luisResult;
         }
 
-        private async Task<QnaQueryResult> QueryQna(Activity activity)
+        private async Task<QnaQueryResult> QueryQna(string question)
         {
             var kbId = "51a53b34-dc8f-4c2a-899d-2ae926b2d3fb";
             var qnaKey = "d952660440e84528b63bbbb6039b86be";
 
             var caller = new QnaCaller(kbId, qnaKey);
 
-            var question = activity.Text;
-
             var result = await caller.Query(question);
+
+            return result;
+        }
+
+        private async Task<string> TranslateToNorwegian(string utteranceInEnglish)
+        {
+            var result = await _translator.TranslateFromEnglishToNorwegian(utteranceInEnglish);
+
+            return result;
+        }
+
+        private async Task<string> TranslateToEnglish(string utteranceInNorwegian)
+        {
+            var result = await _translator.TranslateFromNorwegianToEnglish(utteranceInNorwegian);
 
             return result;
         }
 
         private async Task HandleQnaMessage(IDialogContext context, QnaQueryResult result)
         {
+
             await context.PostAsync($"QnA score: {result.Answers[0].Score}");
             await context.PostAsync(result.Answers[0].Answer);
         }
@@ -84,21 +139,30 @@ namespace InsuranceBotMaster.Dialogs
             await context.PostAsync($"Seems that your car has broken!");
         }
 
-        private async Task HandleAimlMessage(IDialogContext context, Activity activity)
+        private async Task HandleAimlMessage(IDialogContext context, string utterance)
         {
             try
             {
-                var settingsPath = HttpContext.Current.Server.MapPath("~/bin/ConfigurationFiles/Settings.xml");
-                var aimlPath = HttpContext.Current.Server.MapPath("~/bin/AIMLFiles");
-                var basePath = HttpContext.Current.Server.MapPath("~/bin");
+                var cache = MemoryCache.Default;
 
-                var bot = new Bot(basePath);
-                bot.LoadSettings(settingsPath);
-                var loader = new AIMLLoader(bot);
-                loader.LoadAIML(aimlPath);
+                if (!(cache["bot"] is Bot bot))
+                {
+                    var settingsPath = HttpContext.Current.Server.MapPath("~/bin/ConfigurationFiles/Settings.xml");
+                    var aimlPath = HttpContext.Current.Server.MapPath("~/bin/AIMLFiles");
+                    var basePath = HttpContext.Current.Server.MapPath("~/bin");
+
+                    bot = new Bot(basePath);
+                    bot.LoadSettings(settingsPath);
+                    var loader = new AIMLLoader(bot);
+                    loader.LoadAIML(aimlPath);
+                }
+
                 var userId = Guid.NewGuid().ToString();
-                var output = bot.Chat(activity.Text, userId);
-                await context.PostAsync(output.RawOutput);
+                var output = bot.Chat(utterance, userId);
+
+                var result = await TranslateToNorwegian(output.RawOutput);
+
+                await context.PostAsync(result);
             }
             catch (Exception ex)
             {
