@@ -10,22 +10,12 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation.ClaimTypes
     {
         public async Task StartAsync(IDialogContext context)
         {
-            context.Call(new SimpleInputTextDialog("Hvilken dato skjedde ulykken?"), IncidentDateDialogResumeAfter);
+            context.Call(new BaseStartDialog(), BaseStartDialogResumeAfter);
         }
 
-        private async Task IncidentDateDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        private async Task BaseStartDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
-            context.Call(new SimpleInputTextDialog("Ok. Hva er skiltnummeret på kjøretøyet?"), RegistrationNumberDialogResumeAfter);
-        }
-
-        private async Task RegistrationNumberDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
-        {
-            context.Call(new SimpleInputTextDialog("Hva var kilometerstanden på skadetidspunktet? Skriv det inn i tekstfeltet under. Det holder å gi oss et rundt tall, f.eks. til nærmeste 1000 km."), MilageDialogResumeAfter);
-        }
-
-        private async Task MilageDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
-        {
-            context.Call(new InjuredPersonDialog(), InjuredPersonDialogResumeAfter);
+            context.Call(new DriverAndInjuredDialog(), InjuredPersonDialogResumeAfter);
         }
 
         private async Task InjuredPersonDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
@@ -43,6 +33,7 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation.ClaimTypes
             await context.PostAsync("Kan du forklare hvordan ulykken skjedde?");
             context.Call(new SimpleInputTextDialog("Beskriv gjerne så nøyaktig som mulig - men husk at du vil få mulighet til å gi utfyllende opplysninger når vi tar kontakt med deg hvis du ikke har alle detaljene akkurat nå."), AccidentDescriptionDialogResumeAfter);
         }
+
         private async Task AccidentDescriptionDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
             context.Call(new SimpleInputTextDialog("Takk. Hvilke synlige skader har kjøretøyet fått?"), VehicleDamageDialogResumeAfter);

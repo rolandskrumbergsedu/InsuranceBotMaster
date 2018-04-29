@@ -206,6 +206,7 @@
     <Content Include="NLog.config" />
     <Compile Include="Dialogs\GuidedConversation\AutoGlassDialog.cs" />
     <Compile Include="Dialogs\BasicPromptDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\BaseStartDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\BurglaryInCarClaimTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CarTheftClaimTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CollisionWithAnimalClaimTypeDialog.cs" />
@@ -221,13 +222,16 @@
     <Compile Include="Dialogs\GuidedConversation\DamagedItemsDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\DamageInMotionDetailsDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\DamageWhileParkedDetailsDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\DateAndRegistrationNumberDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\DriverAndInjuredDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\IncidentTimeDialog.cs" />
-    <Compile Include="Dialogs\GuidedConversation\InjuredPersonDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\InjuredDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\MainGuidedDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\OtherInformationDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ReportClaimDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\RoadAssistanceDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\VehicleLocationDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\WitnessesDialog.cs" />
     <Compile Include="Helpers\QnaHelper.cs" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
