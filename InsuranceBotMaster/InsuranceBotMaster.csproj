@@ -216,11 +216,18 @@
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\ParkingDamageClaimTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\SingleVehicleClaimTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\TechnicalFailureClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\Common\SimpleInputTextDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ContactInformationDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\DamagedItemsDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\DamageInMotionDetailsDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\DamageWhileParkedDetailsDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\IncidentTimeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\InjuredPersonDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\MainGuidedDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\OtherInformationDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ReportClaimDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\RoadAssistanceDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\VehicleLocationDialog.cs" />
     <Compile Include="Helpers\QnaHelper.cs" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
