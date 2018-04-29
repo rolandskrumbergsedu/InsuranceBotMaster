@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Runtime.Caching;
 using System.Threading.Tasks;
 using System.Web;
@@ -89,8 +90,8 @@ namespace InsuranceBotMaster.Dialogs
 
         private async Task<LuisQueryResult> QueryLuisIntent(string utterance)
         {
-            var appId = "c3b286b3-832e-426b-b9e2-6d849d5a28c6";
-            var luisKey = "92c76cdbf18c4d1db7c2e8e995e29ee2";
+            var appId = ConfigurationManager.AppSettings["LuisAppId"];
+            var luisKey = ConfigurationManager.AppSettings["LuisAPIKey"];
 
             var caller = new LuisCaller(appId, luisKey);
 

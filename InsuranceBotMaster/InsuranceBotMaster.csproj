@@ -204,6 +204,24 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="NLog.config" />
+    <Compile Include="Dialogs\GuidedConversation\AutoGlassDialog.cs" />
+    <Compile Include="Dialogs\BasicPromptDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\BurglaryInCarClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CarTheftClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CollisionWithAnimalClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CollisionWithAnotherVehicleClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CollisionWithCyclistClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CollisionWithPedestrianClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\FireInVehicleClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\ParkingDamageClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\SingleVehicleClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ClaimTypes\TechnicalFailureClaimTypeDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\DamageInMotionDetailsDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\DamageWhileParkedDetailsDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\MainGuidedDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\ReportClaimDialog.cs" />
+    <Compile Include="Dialogs\GuidedConversation\RoadAssistanceDialog.cs" />
+    <Compile Include="Helpers\QnaHelper.cs" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -228,6 +246,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\RootLuisDialog.cs" />
+    <Compile Include="Dialogs\BasicInputTextDialog.cs" />
+    <Compile Include="Dialogs\ClaimTypePedestrian\ClaimTypePedestrianDialog.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Filters\CustomExceptionFilter.cs" />
     <Compile Include="Filters\GlobalExceptionLogger.cs" />
