@@ -5,29 +5,30 @@ using System.Threading.Tasks;
 using System.Web;
 using InsuranceBotMaster.Dialogs.GuidedConversation.Common;
 using Microsoft.Bot.Builder.Dialogs;
-using NLog.Web.LayoutRenderers;
 
 namespace InsuranceBotMaster.Dialogs.GuidedConversation
 {
     [Serializable]
-    public class OtherInformationDialog : IDialog<object>
+    public class VehicleUsedWarrantyDialog : IDialog<object>
     {
         private const string OptionYes = "Ja";
         private const string OptionNo = "Nei";
+        private const string OptionDontKnow = "Vet ikke";
 
         public async Task StartAsync(IDialogContext context)
         {
             var options = new List<string>
             {
                 OptionYes,
-                OptionNo
+                OptionNo,
+                OptionDontKnow
             };
 
             PromptDialog.Choice(
                 context: context,
                 resume: ChoiceReceivedAsync,
                 options: options,
-                prompt: "Er det noe mer du vil fortelle om hendelsen eller skadene før vi avslutter?"
+                prompt: "Har bilen nybil- eller bruktbilgaranti?"
             );
         }
 
@@ -38,9 +39,14 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
             switch (answer)
             {
                 case OptionYes:
-                    context.Call(new SimpleInputTextDialog("Ok, hva vil du legge til?"), CompleteDialogResumeAfter);
+                    context.Call(new SimpleInputTextDialog("Hvilken forhandler ble bilen kjøpt hos?"), CompleteDialogResumeAfter);
                     break;
                 case OptionNo:
+                    await context.PostAsync("Ok.");
+                    context.Done(this);
+                    break;
+                case OptionDontKnow:
+                    await context.PostAsync("Ok.");
                     context.Done(this);
                     break;
             }
@@ -48,6 +54,7 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
 
         private async Task CompleteDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
+            await context.PostAsync("Ok.");
             context.Done(this);
         }
     }

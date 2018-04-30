@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using InsuranceBotMaster.Dialogs.GuidedConversation.Common;
 using Microsoft.Bot.Builder.Dialogs;
-using NLog.Web.LayoutRenderers;
 
 namespace InsuranceBotMaster.Dialogs.GuidedConversation
 {
     [Serializable]
-    public class OtherInformationDialog : IDialog<object>
+    public class PoliceInvolvedDialog : IDialog<object>
     {
         private const string OptionYes = "Ja";
         private const string OptionNo = "Nei";
@@ -27,27 +25,13 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
                 context: context,
                 resume: ChoiceReceivedAsync,
                 options: options,
-                prompt: "Er det noe mer du vil fortelle om hendelsen eller skadene før vi avslutter?"
+                prompt: "Var politiet på ulykkesstedet?"
             );
         }
 
         public async Task ChoiceReceivedAsync(IDialogContext context, IAwaitable<string> argument)
         {
-            var answer = await argument;
-
-            switch (answer)
-            {
-                case OptionYes:
-                    context.Call(new SimpleInputTextDialog("Ok, hva vil du legge til?"), CompleteDialogResumeAfter);
-                    break;
-                case OptionNo:
-                    context.Done(this);
-                    break;
-            }
-        }
-
-        private async Task CompleteDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
-        {
+            await context.PostAsync("Ok.");
             context.Done(this);
         }
     }

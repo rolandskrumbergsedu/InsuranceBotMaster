@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 using System.Web;
 using InsuranceBotMaster.Dialogs.GuidedConversation.Common;
 using Microsoft.Bot.Builder.Dialogs;
-using NLog.Web.LayoutRenderers;
 
 namespace InsuranceBotMaster.Dialogs.GuidedConversation
 {
     [Serializable]
-    public class OtherInformationDialog : IDialog<object>
+    public class InjuredFireDialog : IDialog<object>
     {
         private const string OptionYes = "Ja";
         private const string OptionNo = "Nei";
@@ -27,7 +26,7 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
                 context: context,
                 resume: ChoiceReceivedAsync,
                 options: options,
-                prompt: "Er det noe mer du vil fortelle om hendelsen eller skadene før vi avslutter?"
+                prompt: "Ble noen skadet i brannen?"
             );
         }
 
@@ -38,15 +37,18 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
             switch (answer)
             {
                 case OptionYes:
-                    context.Call(new SimpleInputTextDialog("Ok, hva vil du legge til?"), CompleteDialogResumeAfter);
+                    await context.PostAsync("Håper skadene ikke er alvorlige.");
+                    await context.PostAsync("Siden det har oppstått en personskade trenger vi litt info om den eller de som har blitt skadet, slik at vi kan følge opp dette.");
+                    context.Call(new InjuredDialog(), InjuredDialogResumeAfter);
                     break;
                 case OptionNo:
+                    await context.PostAsync("Det var godt å høre.");
                     context.Done(this);
                     break;
             }
         }
 
-        private async Task CompleteDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        private async Task InjuredDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
             context.Done(this);
         }

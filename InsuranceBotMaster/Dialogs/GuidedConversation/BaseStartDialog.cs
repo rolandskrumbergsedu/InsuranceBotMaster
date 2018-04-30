@@ -21,8 +21,9 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
             context.Call(new SimpleInputTextDialog("Hva var kilometerstanden på skadetidspunktet? Skriv det inn i tekstfeltet under. Det holder å gi oss et rundt tall, f.eks. til nærmeste 1000 km."), MilageDialogResumeAfter);
         }
 
-        
-
-        
+        private async Task MilageDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        {
+            context.Done(this);
+        }
     }
 }

@@ -5,29 +5,30 @@ using System.Threading.Tasks;
 using System.Web;
 using InsuranceBotMaster.Dialogs.GuidedConversation.Common;
 using Microsoft.Bot.Builder.Dialogs;
-using NLog.Web.LayoutRenderers;
 
 namespace InsuranceBotMaster.Dialogs.GuidedConversation
 {
     [Serializable]
-    public class OtherInformationDialog : IDialog<object>
+    public class ParkingDamageCausedDialog : IDialog<object>
     {
-        private const string OptionYes = "Ja";
-        private const string OptionNo = "Nei";
+        private const string OptionOtherVehicle = "Annet kjøretøy";
+        private const string OptionOther = "På verksted";
+        private const string OptionUnknown = "Nei, ukjent årsak";
 
         public async Task StartAsync(IDialogContext context)
         {
             var options = new List<string>
             {
-                OptionYes,
-                OptionNo
+                OptionOtherVehicle,
+                OptionOther,
+                OptionUnknown
             };
 
             PromptDialog.Choice(
                 context: context,
                 resume: ChoiceReceivedAsync,
                 options: options,
-                prompt: "Er det noe mer du vil fortelle om hendelsen eller skadene før vi avslutter?"
+                prompt: "Vet du hvem eller hva som har forårsaket skaden?"
             );
         }
 
@@ -37,10 +38,14 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
 
             switch (answer)
             {
-                case OptionYes:
-                    context.Call(new SimpleInputTextDialog("Ok, hva vil du legge til?"), CompleteDialogResumeAfter);
+                case OptionOtherVehicle:
+                    context.Call(new SimpleInputTextDialog("Ok. Oppgi registreringsnummeret på kjøretøyet som forårsaket skaden hvis du har dette."), CompleteDialogResumeAfter);
                     break;
-                case OptionNo:
+                case OptionOther:
+                    context.Call(new SimpleInputTextDialog("Ok, oppgi skadevolders navn og kontaktinfo (tlf og/eller e-post) hvis du har dette."), CompleteDialogResumeAfter);
+                    break;
+                case OptionUnknown:
+                    await context.PostAsync("Ok.");
                     context.Done(this);
                     break;
             }

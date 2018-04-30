@@ -20,7 +20,7 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation.ClaimTypes
 
         private async Task InjuredPersonDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
-            context.Call(new SimpleInputTextDialog("Var politiet på ulykkesstedet?"), PoliceInvolvedDialogResumeAfter);
+            context.Call(new PoliceInvolvedDialog(), PoliceInvolvedDialogResumeAfter);
         }
 
         private async Task PoliceInvolvedDialogResumeAfter(IDialogContext context, IAwaitable<object> result)

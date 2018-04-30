@@ -47,8 +47,6 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
                     context.Call(new SimpleInputTextDialog("Hva heter den som ble skadet?"), PassengerDamageDialogResumeAfter);
                     break;
             }
-
-            context.Done(this);
         }
 
         private async Task PassengerDamageDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
