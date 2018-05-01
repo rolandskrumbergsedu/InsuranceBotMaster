@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using System.Web;
 using InsuranceBotMaster.AIML;
 using InsuranceBotMaster.AIML.Utils;
+using InsuranceBotMaster.Dialogs.Common;
+using InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes;
+using InsuranceBotMaster.Dialogs.HybridConversation.Common;
 using InsuranceBotMaster.QnA;
 using InsuranceBotMaster.Translation;
 using Microsoft.Bot.Builder.Dialogs;
@@ -17,15 +20,9 @@ using Newtonsoft.Json;
 namespace InsuranceBotMaster.Dialogs
 {
     [Serializable]
-    public class RootLuisDialog : LuisDialog<object>
+    public class RootLuisDialog : BasicLuisDialog
     {
-        public RootLuisDialog() : base(new LuisService(new LuisModelAttribute(
-            ConfigurationManager.AppSettings["LuisAppId"],
-            ConfigurationManager.AppSettings["LuisAPIKey"],
-            domain: ConfigurationManager.AppSettings["LuisAPIHostName"],
-            threshold: 0.7)))
-        {
-        }
+
 
         [LuisIntent("")]
         [LuisIntent("None")]
@@ -79,17 +76,13 @@ namespace InsuranceBotMaster.Dialogs
         [LuisIntent("Open.Greeting")]
         public async Task GreetingIntent(IDialogContext context, LuisResult result)
         {
-            await ShowLuisResult(context, result);
-            await context.PostAsync("Hi, there! How may I help you?");
+            await context.PostAsync("Hei! Hvordan kan jeg hjelpe deg ?");
         }
 
         [LuisIntent("Claims.Norway.Motor.ClaimType.Pedestrian")]
         public async Task ClaimsNorwayMotorClaimTypePedestrian(IDialogContext context, LuisResult result)
         {
-            await context.PostAsync("I'm sorry to hear that!");
-            var newMessage = context.MakeMessage();
-            //await context.Forward(new ClaimTypePedestrianDialog(), HandleChildDialogResult, newMessage,
-            //    CancellationToken.None);
+            context.Call(new CollisionWithPedestrianClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
         [LuisIntent("Claims.Norway.Motor.ClaimType.Animal")]
@@ -144,6 +137,34 @@ namespace InsuranceBotMaster.Dialogs
         public async Task ClaimsNorwayMotorClaimTypeCyclist(IDialogContext context, LuisResult result)
         {
             await context.PostAsync("I'm sorry to hear that! Lets report damage on ClaimType.Cyclist");
+        }
+
+        [LuisIntent("Claims.Norway.Motor.ReportClaim")]
+        public async Task ClaimsNorwayMotorReportClaim(IDialogContext context, LuisResult result)
+        {
+            await context.PostAsync("Kan du beskrive hva som har skjedd?");
+        }
+
+        [LuisIntent("Claims.Norway.Motor.RoadAssistance")]
+        public async Task ClaimsNorwayMotorRoadAssistance(IDialogContext context, LuisResult result)
+        {
+            context.Call(new RoadAssistanceDialog(), CompleteDialogResumeAfter);
+        }
+
+        [LuisIntent("Claims.Norway.Motor.AutoGlass")]
+        public async Task ClaimsNorwayMotorAutoGlass(IDialogContext context, LuisResult result)
+        {
+            context.Call(new AutoGlassDialog(), CompleteDialogResumeAfter);
+        }
+
+        private async Task ClaimTypeDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        {
+            await context.PostAsync("Thank you! Is there anything else I can help you with?");
+        }
+
+        private async Task CompleteDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        {
+            await context.PostAsync("Is there anything else I can help you with?");
         }
 
         private static async Task ShowLuisResult(IDialogContext context, LuisResult result)

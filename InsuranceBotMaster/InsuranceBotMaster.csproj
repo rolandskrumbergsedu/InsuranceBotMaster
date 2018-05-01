@@ -204,8 +204,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="NLog.config" />
+    <Compile Include="Dialogs\HybridConversation\ClaimTypes\CollisionWithPedestrianClaimTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\AnimalTypeDialog.cs" />
-    <Compile Include="Dialogs\GuidedConversation\AutoGlassDialog.cs" />
+    <Compile Include="Dialogs\Common\AutoGlassDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\BaseStartDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\BurglaryInCarClaimTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CarTheftClaimTypeDialog.cs" />
@@ -239,7 +240,7 @@
     <Compile Include="Dialogs\GuidedConversation\ReportClaimDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ReportedFireToPoliceDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ReportedToPoliceDialog.cs" />
-    <Compile Include="Dialogs\GuidedConversation\RoadAssistanceDialog.cs" />
+    <Compile Include="Dialogs\Common\RoadAssistanceDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\StolenItems.cs" />
     <Compile Include="Dialogs\GuidedConversation\VehicleDamageDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\VehicleFoundDialog.cs" />
@@ -249,6 +250,9 @@
     <Compile Include="Dialogs\GuidedConversation\VehicleLockedDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\VehicleUsedWarrantyDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\WitnessesDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Common\BasicLuisDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\AreYouTheDriverDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\OtherDriversContactInformationDialog.cs" />
     <Compile Include="Helpers\DebugActivityLogger.cs" />
     <Compile Include="Helpers\PromptHelper.cs" />
     <Compile Include="Helpers\QnaHelper.cs" />

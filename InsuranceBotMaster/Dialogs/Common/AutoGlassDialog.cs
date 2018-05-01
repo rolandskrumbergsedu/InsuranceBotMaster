@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 
-namespace InsuranceBotMaster.Dialogs.GuidedConversation
+namespace InsuranceBotMaster.Dialogs.Common
 {
     [Serializable]
     public class AutoGlassDialog : IDialog<object>

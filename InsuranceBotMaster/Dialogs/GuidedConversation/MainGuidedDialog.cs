@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using InsuranceBotMaster.Helpers;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using InsuranceBotMaster.Dialogs.Common;
 
 namespace InsuranceBotMaster.Dialogs.GuidedConversation
 {

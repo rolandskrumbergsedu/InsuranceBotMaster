@@ -19,7 +19,7 @@ namespace InsuranceBotMaster.Helpers
 
 	        var qnaTopResult = qnaResult.Answers.OrderByDescending(x => x.Score).FirstOrDefault();
 
-	        var threshold = double.Parse(ConfigurationManager.AppSettings["QnaAppId"]);
+	        var threshold = double.Parse(ConfigurationManager.AppSettings["QnaThreshold"]);
 
 	        if (qnaTopResult != null && qnaTopResult.Score > threshold)
 	        {
@@ -28,5 +28,23 @@ namespace InsuranceBotMaster.Helpers
 
 	        return string.Empty;
 	    }
+
+        public static async Task<string> IsQnA(string messsage)
+        {
+            var qna = new QnaCaller(ConfigurationManager.AppSettings["QnaAppId"], ConfigurationManager.AppSettings["QnaAppKey"]);
+
+            var qnaResult = await qna.Query(messsage);
+
+            var qnaTopResult = qnaResult.Answers.OrderByDescending(x => x.Score).FirstOrDefault();
+
+            var threshold = double.Parse(ConfigurationManager.AppSettings["QnaThreshold"]);
+
+            if (qnaTopResult != null && qnaTopResult.Score > threshold)
+            {
+                return qnaTopResult.Answer;
+            }
+
+            return string.Empty;
+        }
     }
 }
