@@ -9,6 +9,7 @@ using System.Web.Routing;
 using Autofac;
 using InsuranceBotMaster.AIML;
 using InsuranceBotMaster.AIML.Utils;
+using InsuranceBotMaster.Helpers;
 using Microsoft.Bot.Builder.Azure;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Internals;
@@ -34,6 +35,8 @@ namespace InsuranceBotMaster
                     .Keyed<IBotDataStore<BotData>>(AzureModule.Key_DataStore)
                     .AsSelf()
                     .SingleInstance();
+
+                builder.RegisterType<DebugActivityLogger>().AsImplementedInterfaces().InstancePerDependency();
             });
 
             var settingsPath = HttpContext.Current.Server.MapPath("~/bin/ConfigurationFiles/Settings.xml");

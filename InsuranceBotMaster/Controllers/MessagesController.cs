@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -18,9 +19,6 @@ namespace InsuranceBotMaster.Controllers
         /// </summary>
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
-            var logger = NLog.LogManager.GetCurrentClassLogger();
-            logger.Error($"Hit on post @ {DateTime.Now}");
-
             if (activity.Type == ActivityTypes.Message)
             {
                 //await Conversation.SendAsync(activity, () => new Dialogs.RootLuisDialog());
@@ -46,6 +44,17 @@ namespace InsuranceBotMaster.Controllers
                 // Handle conversation state changes, like members being added and removed
                 // Use Activity.MembersAdded and Activity.MembersRemoved and Activity.Action for info
                 // Not available in all channels
+                //if (message.MembersAdded.Any(o => o.Id == message.Recipient.Id))
+                //{
+                //    ConnectorClient connector = new ConnectorClient(new System.Uri(message.ServiceUrl));
+                //    Activity reply = message.CreateReply("Hi!");
+                //    connector.Conversations.ReplyToActivityAsync(reply);
+                //    message.Type = ActivityTypes.Message;
+
+                //    reply = message.CreateReply("Velkommen til skadesenteret!");
+                //    connector.Conversations.ReplyToActivityAsync(reply);
+                //    message.Type = ActivityTypes.Message;
+                //}
             }
             else if (message.Type == ActivityTypes.ContactRelationUpdate)
             {

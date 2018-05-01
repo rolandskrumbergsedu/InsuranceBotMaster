@@ -250,6 +250,8 @@
     <Compile Include="Dialogs\GuidedConversation\VehicleLockedDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\VehicleUsedWarrantyDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\WitnessesDialog.cs" />
+    <Compile Include="Helpers\DebugActivityLogger.cs" />
+    <Compile Include="Helpers\PromptHelper.cs" />
     <Compile Include="Helpers\QnaHelper.cs" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
