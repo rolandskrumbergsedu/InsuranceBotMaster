@@ -206,7 +206,6 @@
     <Content Include="NLog.config" />
     <Compile Include="Dialogs\GuidedConversation\AnimalTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\AutoGlassDialog.cs" />
-    <Compile Include="Dialogs\BasicPromptDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\BaseStartDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\BurglaryInCarClaimTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\ClaimTypes\CarTheftClaimTypeDialog.cs" />
@@ -277,10 +276,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
-    <Compile Include="Dialogs\RootLuisDialog.cs" />
-    <Compile Include="Dialogs\BasicInputTextDialog.cs" />
-    <Compile Include="Dialogs\ClaimTypePedestrian\ClaimTypePedestrianDialog.cs" />
-    <Compile Include="Dialogs\RootDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\RootLuisDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Common\BasicInputTextDialog.cs" />
     <Compile Include="Filters\CustomExceptionFilter.cs" />
     <Compile Include="Filters\GlobalExceptionLogger.cs" />
     <Compile Include="Global.asax.cs">

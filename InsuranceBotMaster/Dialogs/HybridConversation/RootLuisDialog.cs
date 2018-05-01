@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Web;
 using InsuranceBotMaster.AIML;
 using InsuranceBotMaster.AIML.Utils;
-using InsuranceBotMaster.Dialogs.ClaimTypePedestrian;
 using InsuranceBotMaster.QnA;
 using InsuranceBotMaster.Translation;
 using Microsoft.Bot.Builder.Dialogs;
@@ -89,8 +88,8 @@ namespace InsuranceBotMaster.Dialogs
         {
             await context.PostAsync("I'm sorry to hear that!");
             var newMessage = context.MakeMessage();
-            await context.Forward(new ClaimTypePedestrianDialog(), HandleChildDialogResult, newMessage,
-                CancellationToken.None);
+            //await context.Forward(new ClaimTypePedestrianDialog(), HandleChildDialogResult, newMessage,
+            //    CancellationToken.None);
         }
 
         [LuisIntent("Claims.Norway.Motor.ClaimType.Animal")]
