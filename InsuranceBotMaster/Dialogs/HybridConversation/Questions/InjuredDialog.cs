@@ -101,7 +101,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
             context.Done(false);
         }
 
-        [LuisIntent("Open.Other")]
+        [LuisIntent("Open.OtherPerson")]
         public async Task OpenOtherIntent(IDialogContext context, LuisResult result)
         {
             context.Call(new BasicInputTextDialog("Hva heter den som ble skadet?"), InjuredPersonNameDialogResumeAfter);
