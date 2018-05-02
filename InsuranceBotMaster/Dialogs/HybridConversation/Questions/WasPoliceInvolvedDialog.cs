@@ -1,14 +1,17 @@
-﻿using InsuranceBotMaster.Dialogs.HybridConversation.Common;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web;
+using InsuranceBotMaster.Dialogs.HybridConversation.Common;
 using InsuranceBotMaster.Helpers;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis.Models;
-using System;
-using System.Threading.Tasks;
 
 namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
 {
     [Serializable]
-    public class AreYouTheDriverDialog : BasicLuisDialog
+    public class WasPoliceInvolvedDialog : BasicLuisDialog
     {
         [LuisIntent("")]
         [LuisIntent("None")]
@@ -33,13 +36,6 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
 
         [LuisIntent("Open.No")]
         public async Task NoIntent(IDialogContext context, LuisResult result)
-        {
-            await context.PostAsync("Siden du ikke kjørte selv trenger vi kontaktinformasjonen til sjåføren.");
-
-            context.Call(new OtherDriversContactInformationDialog(), OtherDriversContactInformationDialogResumeAfter);
-        }
-
-        private async Task OtherDriversContactInformationDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
             context.Done(false);
         }

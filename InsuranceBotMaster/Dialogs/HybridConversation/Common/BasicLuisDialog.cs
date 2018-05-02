@@ -1,10 +1,10 @@
 ﻿using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Web;
+using System.Threading.Tasks;
+using InsuranceBotMaster.Helpers;
+using Microsoft.Bot.Builder.Luis.Models;
 
 namespace InsuranceBotMaster.Dialogs.HybridConversation.Common
 {

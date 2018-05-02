@@ -252,7 +252,15 @@
     <Compile Include="Dialogs\GuidedConversation\WitnessesDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Common\BasicLuisDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\AreYouTheDriverDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\IncidentTimeDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\InjuredDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\IsSomethingElseToTellDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\OtherDriversContactInformationDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\WasCarDamagedDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\WasPedestrianInjuredDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\WasPoliceInvolvedDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\WasSomebodyElseInjuredDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\WhereIsCarNowDialog.cs" />
     <Compile Include="Helpers\DebugActivityLogger.cs" />
     <Compile Include="Helpers\PromptHelper.cs" />
     <Compile Include="Helpers\QnaHelper.cs" />
