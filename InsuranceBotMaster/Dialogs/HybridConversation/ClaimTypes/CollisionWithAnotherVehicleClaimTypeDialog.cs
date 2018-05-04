@@ -1,16 +1,15 @@
-﻿using InsuranceBotMaster.Dialogs.HybridConversation.Questions;
-using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Connector;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using InsuranceBotMaster.Dialogs.HybridConversation.Questions;
+using Microsoft.Bot.Builder.Dialogs;
 
 namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
 {
     [Serializable]
-    public class CollisionWithPedestrianClaimTypeDialog : IDialog<object>
+    public class CollisionWithAnotherVehicleClaimTypeDialog : IDialog<object>
     {
         public async Task StartAsync(IDialogContext context)
         {
@@ -52,7 +51,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
             if (!qnaInvoked)
             {
                 await context.PostAsync("Var det du som kjørte?");
-                context.Call(new AreYouTheDriverDialog(), AreYouTheDriverDialogResumeAfter);
+                context.Call(new MotorNoDriverAndInjuredDialog(), MotorNoDriverAndInjuredDialogResumeAfter);
             }
             else
             {
@@ -60,47 +59,19 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
             }
         }
 
-        private async Task AreYouTheDriverDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        private async Task MotorNoDriverAndInjuredDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
             var qnaInvoked = Convert.ToBoolean(await result);
 
             if (!qnaInvoked)
             {
-                await context.PostAsync("Ble fotgjengeren skadet i ulykken?");
-                context.Call(new WasPedestrianInjuredDialog(), WasPedestrianInjuredDialogResumeAfter);
-            }
-            else
-            {
-                context.Call(new AreYouTheDriverDialog(), AreYouTheDriverDialogResumeAfter);
-            }
-        }
-
-        private async Task WasPedestrianInjuredDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
-        {
-            var qnaInvoked = Convert.ToBoolean(await result);
-
-            if (!qnaInvoked)
-            {
-                context.Call(new WasPoliceInvolvedDialog(), WasPoliceInvolvedDialogResumeAfter);
-            }
-            else
-            {
-                await context.PostAsync("Ble fotgjengeren skadet i ulykken?");
-                context.Call(new WasPedestrianInjuredDialog(), WasPedestrianInjuredDialogResumeAfter);
-            }
-        }
-
-        private async Task WasPoliceInvolvedDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
-        {
-            var qnaInvoked = Convert.ToBoolean(await result);
-
-            if (!qnaInvoked)
-            {
+                await context.PostAsync("I hvilket tidsrom skjedde ulykken?");
                 context.Call(new IncidentTimeDialog(), IncidentTimeDialogResumeAfter);
             }
             else
             {
-                context.Call(new WasPoliceInvolvedDialog(), WasPoliceInvolvedDialogResumeAfter);
+                await context.PostAsync("Var det du som kjørte?");
+                context.Call(new MotorNoDriverAndInjuredDialog(), MotorNoDriverAndInjuredDialogResumeAfter);
             }
         }
 
@@ -115,6 +86,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
             }
             else
             {
+                await context.PostAsync("I hvilket tidsrom skjedde ulykken?");
                 context.Call(new IncidentTimeDialog(), IncidentTimeDialogResumeAfter);
             }
         }
@@ -125,7 +97,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
 
             if (!qnaInvoked)
             {
-                context.Call(new WasCarDamagedDialog(), WasCarDamagedDialogResumeAfter);
+                context.Call(new BasicInputTextDialog("Takk. Hvilke synlige skader har kjøretøyet fått?"), CarDamageDescriptionDialogResumeAfter);
             }
             else
             {
@@ -134,7 +106,37 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
             }
         }
 
-        private async Task WasCarDamagedDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        private async Task CarDamageDescriptionDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        {
+            var qnaInvoked = Convert.ToBoolean(await result);
+
+            if (!qnaInvoked)
+            {
+                await context.PostAsync("Takk. Hvor er kjøretøyet nå?");
+                context.Call(new WhereIsCarNowDialog(), WhereIsCarNowDialogResumeAfter);
+            }
+            else
+            {
+                context.Call(new BasicInputTextDialog("Takk. Hvilke synlige skader har kjøretøyet fått?"), CarDamageDescriptionDialogResumeAfter);
+            }
+        }
+
+        private async Task WhereIsCarNowDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        {
+            var qnaInvoked = Convert.ToBoolean(await result);
+
+            if (!qnaInvoked)
+            {
+                context.Call(new BasicInputTextDialog("Ok. Hvilke synlige skader fikk det andre kjøretøyet?"), OtherCarDamageDescriptionDialogResumeAfter);
+            }
+            else
+            {
+                await context.PostAsync("Takk. Hvor er kjøretøyet nå?");
+                context.Call(new WhereIsCarNowDialog(), WhereIsCarNowDialogResumeAfter);
+            }
+        }
+
+        private async Task OtherCarDamageDescriptionDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
             var qnaInvoked = Convert.ToBoolean(await result);
 
@@ -145,7 +147,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
             }
             else
             {
-                context.Call(new WasCarDamagedDialog(), WasCarDamagedDialogResumeAfter);
+                context.Call(new BasicInputTextDialog("Ok. Hvilke synlige skader fikk det andre kjøretøyet?"), OtherCarDamageDescriptionDialogResumeAfter);
             }
         }
 
