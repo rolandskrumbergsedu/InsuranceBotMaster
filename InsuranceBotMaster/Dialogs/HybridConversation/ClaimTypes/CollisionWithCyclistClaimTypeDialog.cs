@@ -1,16 +1,15 @@
-﻿using InsuranceBotMaster.Dialogs.HybridConversation.Questions;
-using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Connector;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using InsuranceBotMaster.Dialogs.HybridConversation.Questions;
+using Microsoft.Bot.Builder.Dialogs;
 
 namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
 {
     [Serializable]
-    public class CollisionWithPedestrianClaimTypeDialog : IDialog<object>
+    public class CollisionWithCyclistClaimTypeDialog : IDialog<object>
     {
         public async Task StartAsync(IDialogContext context)
         {
@@ -66,8 +65,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
 
             if (!qnaInvoked)
             {
-                await context.PostAsync("Ble fotgjengeren skadet i ulykken?");
-                context.Call(new WasPedestrianInjuredDialog(), WasPedestrianInjuredDialogResumeAfter);
+                await context.PostAsync("Ble syklisten skadet  i ulykken?");
+                context.Call(new WasCyclistInjuredDialog(), WasCyclistInjuredDialogResumeAfter);
             }
             else
             {
@@ -75,7 +74,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
             }
         }
 
-        private async Task WasPedestrianInjuredDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        private async Task WasCyclistInjuredDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
             var qnaInvoked = Convert.ToBoolean(await result);
 
@@ -86,7 +85,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
             else
             {
                 await context.PostAsync("Ble fotgjengeren skadet i ulykken?");
-                context.Call(new WasPedestrianInjuredDialog(), WasPedestrianInjuredDialogResumeAfter);
+                context.Call(new WasPedestrianInjuredDialog(), WasCyclistInjuredDialogResumeAfter);
             }
         }
 
@@ -140,12 +139,26 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
 
             if (!qnaInvoked)
             {
+                context.Call(new WasCycleDamagedDialog(), WasCycleDamagedDialogResumeAfter);
+            }
+            else
+            {
+                context.Call(new WasCarDamagedDialog(), WasCarDamagedDialogResumeAfter);
+            }
+        }
+        
+        private async Task WasCycleDamagedDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        {
+            var qnaInvoked = Convert.ToBoolean(await result);
+
+            if (!qnaInvoked)
+            {
                 await context.PostAsync("Da er vi snart ferdige! Vi skal bare sjekke at vi har riktig kontaktinformasjon.");
                 context.Call(new BasicInputTextDialog("Hvilket telefonnummer kan vi nå deg på?"), PhoneNumberDialogResumeAfter);
             }
             else
             {
-                context.Call(new WhereIsCarNowDialog(), WasCarDamagedDialogResumeAfter);
+                context.Call(new WasCycleDamagedDialog(), WasCycleDamagedDialogResumeAfter);
             }
         }
 

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using InsuranceBotMaster.Dialogs.HybridConversation.Common;
 using InsuranceBotMaster.Helpers;
 using Microsoft.Bot.Builder.Dialogs;
@@ -8,7 +11,7 @@ using Microsoft.Bot.Builder.Luis.Models;
 namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
 {
     [Serializable]
-    public class WasCarDamagedDialog : BasicLuisDialog
+    public class WasCycleDamagedDialog : BasicLuisDialog
     {
         [LuisIntent("")]
         [LuisIntent("None")]
@@ -28,9 +31,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.Yes")]
         public async Task YesIntent(IDialogContext context, LuisResult result)
         {
-            context.Call(new BasicInputTextDialog("Hvilke skader har kjøretøyet fått?"), CarDamageDialogResumeAfter);
-
-            context.Done(false);
+            context.Call(new BasicInputTextDialog("Hva slags skader fikk sykkelen?"), CycleDamageDialogResumeAfter);
         }
 
         [LuisIntent("Open.No")]
@@ -39,21 +40,13 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
             context.Done(false);
         }
 
-        private async Task CarDamageDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        [LuisIntent("Open.DontKnow")]
+        public async Task DontKnowIntent(IDialogContext context, LuisResult result)
         {
-            var qnaInvoked = Convert.ToBoolean(await result);
-
-            if (!qnaInvoked)
-            {
-                context.Call(new WhereIsCarNowDialog(), WhereIsCarNowDialogResumeAfter);
-            }
-            else
-            {
-                context.Call(new BasicInputTextDialog("Hvilke skader har kjøretøyet fått?"), CarDamageDialogResumeAfter);
-            }
+            context.Done(false);
         }
 
-        private async Task WhereIsCarNowDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
+        private async Task CycleDamageDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
             var qnaInvoked = Convert.ToBoolean(await result);
 
@@ -63,7 +56,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
             }
             else
             {
-                context.Call(new WhereIsCarNowDialog(), WhereIsCarNowDialogResumeAfter);
+                context.Call(new BasicInputTextDialog("Hva slags skader fikk sykkelen?"), CycleDamageDialogResumeAfter);
             }
         }
     }

@@ -204,6 +204,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="NLog.config" />
+    <Compile Include="Dialogs\HybridConversation\ClaimTypes\CollisionWithCyclistClaimTypeDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\ClaimTypes\CollisionWithPedestrianClaimTypeDialog.cs" />
     <Compile Include="Dialogs\GuidedConversation\AnimalTypeDialog.cs" />
     <Compile Include="Dialogs\Common\AutoGlassDialog.cs" />
@@ -257,6 +258,8 @@
     <Compile Include="Dialogs\HybridConversation\Questions\IsSomethingElseToTellDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\OtherDriversContactInformationDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\WasCarDamagedDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\WasCycleDamagedDialog.cs" />
+    <Compile Include="Dialogs\HybridConversation\Questions\WasCyclistInjuredDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\WasPedestrianInjuredDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\WasPoliceInvolvedDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\WasSomebodyElseInjuredDialog.cs" />
