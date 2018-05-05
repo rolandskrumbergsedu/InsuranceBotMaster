@@ -1,5 +1,0 @@
-C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster.AIML\obj\Debug\InsuranceBotMaster.AIML.csproj.CoreCompileInputs.cache
-C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster.AIML\bin\Debug\InsuranceBotMaster.AIML.dll
-C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster.AIML\bin\Debug\InsuranceBotMaster.AIML.pdb
-C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster.AIML\obj\Debug\InsuranceBotMaster.AIML.dll
-C:\LocalGit\InsuranceBotMaster\InsuranceBotMaster.AIML\obj\Debug\InsuranceBotMaster.AIML.pdb
