@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
-using InsuranceBotMaster.Dialogs.GuidedConversation.Common;
+using InsuranceBotMaster.Dialogs.HybridConversation.Common;
 using Microsoft.Bot.Builder.Dialogs;
 
 namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
@@ -39,10 +37,10 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
             switch (answer)
             {
                 case OptionMorning:
-                    context.Done(this);
+                    context.Done(false);
                     break;
                 case OptionDay:
-                    context.Done(this);
+                    context.Done(false);
                     break;
                 case OptionNight:
                     context.Call(
@@ -59,7 +57,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
 
             if (!qnaInvoked)
             {
-                context.Done(this);
+                context.Done(false);
             }
             else
             {

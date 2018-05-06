@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using InsuranceBotMaster.Dialogs.HybridConversation.Common;
 using InsuranceBotMaster.Helpers;
 using Microsoft.Bot.Builder.Dialogs;
@@ -31,7 +28,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.Yes")]
         public async Task YesIntent(IDialogContext context, LuisResult result)
         {
-            await context.PostAsync("Siden du ikke kjørte selv trenger vi kontaktinformasjonen til sjåføren.");
+            await context.PostAsync("Håper skadene ikke er alvorlige.");
             await context.PostAsync("Siden det har oppstått en personskade trenger vi litt info om den eller de som har blitt skadet, slik at vi kan følge opp dette.");
 
             await context.PostAsync("Hvem ble skadet?");
@@ -51,6 +48,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
 
             if (!qnaInvoked)
             {
+                await context.PostAsync("Var det noen andre som ble skadet?");
                 context.Call(new WasSomebodyElseInjuredDialog(), WasSomebodyElseInjuredDialogResumeAFter);
             }
             else

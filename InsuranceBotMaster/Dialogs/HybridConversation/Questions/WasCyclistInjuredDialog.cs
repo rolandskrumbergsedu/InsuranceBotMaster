@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using InsuranceBotMaster.Dialogs.HybridConversation.Common;
 using InsuranceBotMaster.Helpers;
 using Microsoft.Bot.Builder.Dialogs;

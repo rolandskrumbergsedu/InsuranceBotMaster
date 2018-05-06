@@ -286,7 +286,9 @@
     <Compile Include="Dialogs\HybridConversation\Questions\WhereIsCarNowDialog.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\WhoCausedDamage.cs" />
     <Compile Include="Dialogs\HybridConversation\Questions\WitnessesDialog.cs" />
+    <Compile Include="Helpers\AimlHelper.cs" />
     <Compile Include="Helpers\DebugActivityLogger.cs" />
+    <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Helpers\PromptHelper.cs" />
     <Compile Include="Helpers\QnaHelper.cs" />
     <None Include="NLog.xsd">

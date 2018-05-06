@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using InsuranceBotMaster.Dialogs.HybridConversation.Common;
 using InsuranceBotMaster.Dialogs.HybridConversation.Questions;
 using Microsoft.Bot.Builder.Dialogs;
 
@@ -167,6 +168,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
             if (!qnaInvoked)
             {
                 await context.PostAsync("Takk!");
+                await context.PostAsync("Er det noe mer du vil fortelle om hendelsen eller skadene før vi avslutter?");
                 context.Call(new IsSomethingElseToTellDialog(), IsSomethingElseToTellDialogResumeAfter);
             }
             else

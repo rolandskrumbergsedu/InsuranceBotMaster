@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using InsuranceBotMaster.Dialogs.GuidedConversation;
+using InsuranceBotMaster.Dialogs.HybridConversation;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
@@ -21,7 +19,7 @@ namespace InsuranceBotMaster.Controllers
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.RootLuisDialog());
+                await Conversation.SendAsync(activity, () => new RootLuisDialog());
                 //await Conversation.SendAsync(activity, () => new MainGuidedDialog());
             }
             else

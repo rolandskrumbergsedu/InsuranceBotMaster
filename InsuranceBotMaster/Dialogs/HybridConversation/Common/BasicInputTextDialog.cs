@@ -4,7 +4,7 @@ using InsuranceBotMaster.Helpers;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
 
-namespace InsuranceBotMaster.Dialogs
+namespace InsuranceBotMaster.Dialogs.HybridConversation.Common
 {
     [Serializable]
     public class BasicInputTextDialog : IDialog<object>
