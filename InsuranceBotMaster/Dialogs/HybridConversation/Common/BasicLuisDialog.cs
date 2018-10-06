@@ -2,9 +2,6 @@
 using Microsoft.Bot.Builder.Luis;
 using System;
 using System.Configuration;
-using System.Threading.Tasks;
-using InsuranceBotMaster.Helpers;
-using Microsoft.Bot.Builder.Luis.Models;
 
 namespace InsuranceBotMaster.Dialogs.HybridConversation.Common
 {
@@ -15,7 +12,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Common
             ConfigurationManager.AppSettings["LuisAppId"],
             ConfigurationManager.AppSettings["LuisAPIKey"],
             domain: ConfigurationManager.AppSettings["LuisAPIHostName"],
-            threshold: 0.7)))
+            threshold: double.Parse(ConfigurationManager.AppSettings["LuisAPIHostName"]))))
         {
         }
     }

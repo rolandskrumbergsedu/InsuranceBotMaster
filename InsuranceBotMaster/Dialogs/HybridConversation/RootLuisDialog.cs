@@ -4,20 +4,24 @@ using InsuranceBotMaster.Dialogs.Common;
 using InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes;
 using InsuranceBotMaster.Dialogs.HybridConversation.Common;
 using InsuranceBotMaster.Helpers;
+using InsuranceBotMaster.Logging;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis.Models;
+using NLog;
 
 namespace InsuranceBotMaster.Dialogs.HybridConversation
 {
     [Serializable]
     public class RootLuisDialog : BasicLuisDialog
     {
-
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         [LuisIntent("")]
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             var utterance = result.Query;
 
             // If not, check against QnA, if there is a hit, use it, if no, use AIML response
@@ -36,84 +40,98 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         [LuisIntent("Open.Greeting")]
         public async Task GreetingIntent(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             await context.PostAsync("Hei! Hvordan kan jeg hjelpe deg?");
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.Pedestrian")]
+        [LuisIntent("ClaimType.CollisionWithPedestrian")]
         public async Task ClaimsNorwayMotorClaimTypePedestrian(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new CollisionWithPedestrianClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.Animal")]
+        [LuisIntent("ClaimType.CollisionWithAnimal")]
         public async Task ClaimsNorwayMotorClaimTypeAnimal(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new CollisionWithAnimalClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.Theft")]
+        [LuisIntent("ClaimType.Theft")]
         public async Task ClaimsNorwayMotorClaimTypeTheft(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new CarTheftClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.TechnicalFault")]
+        [LuisIntent("ClaimType.TechnicalFault")]
         public async Task ClaimsNorwayMotorClaimTypeTechnicalFault(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new TechnicalFailureClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.SingleVehicle")]
+        [LuisIntent("ClaimType.SingleVehicleAccident")]
         public async Task ClaimsNorwayMotorClaimTypeSingleVehicle(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new SingleVehicleClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.Burglary")]
+        [LuisIntent("ClaimType.Burglary")]
         public async Task ClaimsNorwayMotorClaimTypeBurglary(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new BurglaryInCarClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.ParkingDamage")]
+        [LuisIntent("ClaimType.ParkingDamage")]
         public async Task ClaimsNorwayMotorClaimTypeParkingDamage(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new ParkingDamageClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.OtherVehicle")]
+        [LuisIntent("ClaimType.CollisionWithAnotherVehicle")]
         public async Task ClaimsNorwayMotorClaimTypeOtherVehicle(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new CollisionWithAnotherVehicleClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.Fire")]
+        [LuisIntent("ClaimType.Fire")]
         public async Task ClaimsNorwayMotorClaimTypeFire(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new FireInVehicleClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ClaimType.Cyclist")]
+        [LuisIntent("ClaimType.CollisionWithCyclist")]
         public async Task ClaimsNorwayMotorClaimTypeCyclist(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new CollisionWithCyclistClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.ReportClaim")]
+        [LuisIntent("ReportClaim")]
         public async Task ClaimsNorwayMotorReportClaim(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             await context.PostAsync("Ok. Can you explain shortly what has happened?");
         }
 
-        [LuisIntent("Claims.Norway.Motor.RoadAssistance")]
+        [LuisIntent("RoadAssistance")]
         public async Task ClaimsNorwayMotorRoadAssistance(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new RoadAssistanceDialog(), CompleteDialogResumeAfter);
         }
 
-        [LuisIntent("Claims.Norway.Motor.AutoGlass")]
+        [LuisIntent("AutoGlass")]
         public async Task ClaimsNorwayMotorAutoGlass(IDialogContext context, LuisResult result)
         {
+            _logger.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
             context.Call(new AutoGlassDialog(), CompleteDialogResumeAfter);
         }
 
