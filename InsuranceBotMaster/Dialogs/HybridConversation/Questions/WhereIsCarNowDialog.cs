@@ -14,6 +14,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhereIsCarNowDialog).Name);
+
             var qnaResult = await QnaHelper.IsQnA(result.Query);
 
             if (!string.IsNullOrEmpty(qnaResult))
@@ -28,18 +30,24 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.Place.DailyUse")]
         public async Task OpenDailyUseIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhereIsCarNowDialog).Name);
+
             context.Done(false);
         }
 
         [LuisIntent("Open.Place.Home")]
         public async Task OpenPlaceHomeIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhereIsCarNowDialog).Name);
+
             context.Done(false);
         }
 
         [LuisIntent("Open.Place.Workshop")]
         public async Task OpenPlaceWorkshopIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhereIsCarNowDialog).Name);
+
             context.Call(new BasicInputTextDialog("Hvilket verksted?"), WorkshopDialogResumeAfter);
         }
 
@@ -51,6 +59,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.Place.Other")]
         public async Task OpenPlaceOtherIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhereIsCarNowDialog).Name);
+
             context.Call(new BasicInputTextDialog("Hvor da?"), SomewhereElseDialogResumeAfter);
         }
 
@@ -62,6 +72,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.DontKnow")]
         public async Task OpenDontKnowIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhereIsCarNowDialog).Name);
+
             context.Done(false);
         }
     }

@@ -14,6 +14,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(DamagedItemDialog).Name);
+
             var qnaResult = await QnaHelper.IsQnA(result.Query);
 
             if (!string.IsNullOrEmpty(qnaResult))
@@ -28,6 +30,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.Yes")]
         public async Task YesIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(DamagedItemDialog).Name);
+
             await context.PostAsync("Uff da. Da trenger vi å vite litt mer om det.");
             context.Call(new BasicInputTextDialog("Hva ble skadet og hvilke skader ble det?"), DamagedItemDescriptionDialogResumeAfter);
         }
@@ -35,6 +39,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.No")]
         public async Task NoIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(DamagedItemDialog).Name);
+
             await context.PostAsync("Ok.");
             context.Done(false);
         }

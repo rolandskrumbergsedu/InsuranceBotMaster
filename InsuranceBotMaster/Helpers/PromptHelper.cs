@@ -10,16 +10,16 @@ namespace InsuranceBotMaster.Helpers
         {
             return new PromptOptions<string>(
                 prompt: prompt,
-                retry: "Sorry, I did not understand you!",
-                tooManyAttempts: "I do not get you.",
+                retry: "Beklager, jeg forstod deg ikke!",
+                tooManyAttempts: "Jeg skjønner deg ikke.",
                 options: options,
                 attempts: 2);
         }
 
         public static async Task HandleTooManyAttempts(IDialogContext context)
         {
-            await context.PostAsync("It seems that I am not helping you.");
-            await context.PostAsync("I will start over.");
+            await context.PostAsync("Det ser ut til at jeg ikke hjelper deg.");
+            await context.PostAsync("Jeg skal begynne igjen.");
             context.EndConversation("TooManyAttempts");
         }
     }

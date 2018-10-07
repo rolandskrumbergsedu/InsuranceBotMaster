@@ -14,6 +14,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhoCausedDamage).Name);
+
             var qnaResult = await QnaHelper.IsQnA(result.Query);
 
             if (!string.IsNullOrEmpty(qnaResult))
@@ -28,18 +30,24 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.DamageCause.OtherVehicle")]
         public async Task OpenDamageCauseOtherVehicleIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhoCausedDamage).Name);
+
             context.Call(new BasicInputTextDialog("Ok. Oppgi registreringsnummeret på kjøretøyet som forårsaket skaden hvis du har dette."), OtherVehicleRegistrationDialogResumeAfter);
         }
 
         [LuisIntent("Open.DamageCause.OtherDamage")]
         public async Task OpenDamageCauseOtherDamageIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhoCausedDamage).Name);
+
             context.Call(new BasicInputTextDialog("Ok, oppgi skadevolders navn og kontaktinfo (tlf og/eller e-post) hvis du har dette."), OtherVehicleRegistrationDialogResumeAfter);
         }
 
         [LuisIntent("Open.DamageCause.Unknown")]
         public async Task OpenDamageCauseUnknownIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(WhoCausedDamage).Name);
+
             await context.PostAsync("Ok.");
             context.Done(false);
         }

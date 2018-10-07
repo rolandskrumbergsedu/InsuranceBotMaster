@@ -14,6 +14,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(InjuredDialog).Name);
+
             var qnaResult = await QnaHelper.IsQnA(result.Query);
 
             if (!string.IsNullOrEmpty(qnaResult))
@@ -30,6 +32,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.Driver")]
         public async Task OpenDriverIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(InjuredDialog).Name);
+
             context.Call(new BasicInputTextDialog("Hvilke skader fikk sjåføren?"), DriverDamageDialogResumeAfter);
         }
 
@@ -50,6 +54,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.Passenger")]
         public async Task OpenPassengerIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(InjuredDialog).Name);
+
             context.Call(new BasicInputTextDialog("Hva heter den som ble skadet?"), InjuredPersonNameDialogResumeAfter);
         }
 
@@ -104,6 +110,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.OtherPerson")]
         public async Task OpenOtherIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(InjuredDialog).Name);
+
             context.Call(new BasicInputTextDialog("Hva heter den som ble skadet?"), InjuredPersonNameDialogResumeAfter);
         }
     }

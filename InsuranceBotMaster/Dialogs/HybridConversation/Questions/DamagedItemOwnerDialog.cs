@@ -14,6 +14,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(DamagedItemOwnerDialog).Name);
+
             var qnaResult = await QnaHelper.IsQnA(result.Query);
 
             if (!string.IsNullOrEmpty(qnaResult))
@@ -28,12 +30,16 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.Myself")]
         public async Task YesIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(DamagedItemOwnerDialog).Name);
+
             context.Done(false);
         }
 
         [LuisIntent("Open.Other")]
         public async Task NoIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(DamagedItemOwnerDialog).Name);
+
             context.Call(new BasicInputTextDialog("Hva er kontaktinformasjonen til eieren (f.eks. navn, e-post, telefon)?"), OwnerInformationDialogResumeAfter);
         }
 

@@ -56,8 +56,8 @@ namespace InsuranceBotMaster.Logging
             myEvent.Properties.Add("LogTimeStamp", DateTime.Now);
             myEvent.Properties.Add("Dialog", logInfo["Dialog"]);
             myEvent.Properties.Add("ConversationId", logInfo["ConversationId"]);
-            myEvent.Properties.Add("From", logInfo["From"]);
-            myEvent.Properties.Add("To", logInfo["To"]);
+            myEvent.Properties.Add("Sender", logInfo["Sender"]);
+            myEvent.Properties.Add("Recipient", logInfo["Recipient"]);
             myEvent.Properties.Add("Query", logInfo["Query"]);
             myEvent.Properties.Add("TopScoringIntent", logInfo["TopScoringIntent"]);
             myEvent.Properties.Add("TopScoringIntentScore", logInfo["TopScoringIntentScore"]);
@@ -94,13 +94,13 @@ namespace InsuranceBotMaster.Logging
             {
                 myEvent.Properties.Add("ConversationId", logInfo["ConversationId"]);
             }
-            if (logInfo.ContainsKey("From"))
+            if (logInfo.ContainsKey("Sender"))
             {
-                myEvent.Properties.Add("From", logInfo["From"]);
+                myEvent.Properties.Add("Sender", logInfo["Sender"]);
             }
-            if (logInfo.ContainsKey("To"))
+            if (logInfo.ContainsKey("Recipient"))
             {
-                myEvent.Properties.Add("To", logInfo["To"]);
+                myEvent.Properties.Add("Recipient", logInfo["Recipient"]);
             }
 
             myEvent.Properties.Add("Query", logInfo["Query"]);

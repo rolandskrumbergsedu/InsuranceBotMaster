@@ -14,6 +14,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(AnimalTypeDialog).Name);
+
             var qnaResult = await QnaHelper.IsQnA(result.Query);
 
             if (!string.IsNullOrEmpty(qnaResult))
@@ -28,6 +30,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.AnimalType.Domestic")]
         public async Task OpenDailyUseIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(AnimalTypeDialog).Name);
+
             context.Call(new BasicInputTextDialog("Ok. Hva er skiltnummeret på kjøretøyet?"), CarRegistrationNumberDialogResumeAfter);
         }
 
@@ -49,6 +53,8 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
         [LuisIntent("Open.AnimalType.Wild")]
         public async Task OpenPlaceHomeIntent(IDialogContext context, LuisResult result)
         {
+            LogHelper.LogLuisResult(result, context.Activity, typeof(AnimalTypeDialog).Name);
+
             await context.PostAsync("Når man kjører på vilt er det viktig å ivareta det skadde dyret.");
             await context.PostAsync("Derfor lurer vi på om viltnemda eller politiet ble varslet om hendelsen?");
 

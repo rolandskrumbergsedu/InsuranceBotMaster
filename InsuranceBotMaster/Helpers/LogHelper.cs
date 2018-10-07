@@ -28,8 +28,8 @@ namespace InsuranceBotMaster.Helpers
             {
                 { "Dialog", dialog },
                 { "ConversationId", activity.Conversation.Id},
-                { "From", activity.From.Id },
-                { "To", activity.Recipient.Id },
+                { "Sender", activity.From.Id },
+                { "Recipient", activity.Recipient.Id },
                 { "Query", luisResult.Query },
                 { "TopScoringIntent", luisResult.TopScoringIntent.Intent },
                 { "TopScoringIntentScore", luisResult.TopScoringIntent.Score.ToString() }
@@ -58,8 +58,8 @@ namespace InsuranceBotMaster.Helpers
             var answers = qnaResult.Answers.OrderByDescending(x => x.Score).ToList();
             
             result.Add("ConversationId", activity.Conversation.Id);
-            result.Add("From", activity.From.Id);
-            result.Add("To", activity.Recipient.Id);
+            result.Add("Sender", activity.From.Id);
+            result.Add("Recipient", activity.Recipient.Id);
 
             result.Add("Query", query);
 

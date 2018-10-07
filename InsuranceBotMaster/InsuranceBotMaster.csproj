@@ -291,6 +291,7 @@
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Helpers\PromptHelper.cs" />
     <Compile Include="Helpers\QnaHelper.cs" />
+    <Content Include="db_creation.txt" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

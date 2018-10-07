@@ -40,6 +40,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task GreetingIntent(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             await context.PostAsync("Hei! Hvordan kan jeg hjelpe deg?");
         }
 
@@ -47,6 +48,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypePedestrian(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new CollisionWithPedestrianClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -54,6 +56,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeAnimal(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new CollisionWithAnimalClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -61,6 +64,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeTheft(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new CarTheftClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -68,6 +72,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeTechnicalFault(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new TechnicalFailureClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -75,6 +80,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeSingleVehicle(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new SingleVehicleClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -82,6 +88,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeBurglary(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new BurglaryInCarClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -89,6 +96,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeParkingDamage(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new ParkingDamageClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -96,6 +104,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeOtherVehicle(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new CollisionWithAnotherVehicleClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -103,6 +112,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeFire(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new FireInVehicleClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -110,6 +120,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorClaimTypeCyclist(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new CollisionWithCyclistClaimTypeDialog(), ClaimTypeDialogResumeAfter);
         }
 
@@ -117,6 +128,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorReportClaim(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             await context.PostAsync("Ok. Can you explain shortly what has happened?");
         }
 
@@ -124,6 +136,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorRoadAssistance(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new RoadAssistanceDialog(), CompleteDialogResumeAfter);
         }
 
@@ -131,6 +144,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         public async Task ClaimsNorwayMotorAutoGlass(IDialogContext context, LuisResult result)
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
+
             context.Call(new AutoGlassDialog(), CompleteDialogResumeAfter);
         }
 
