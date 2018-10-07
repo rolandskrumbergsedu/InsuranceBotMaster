@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using InsuranceBotMaster.AIML;
 using InsuranceBotMaster.AIML.Utils;
+using InsuranceBotMaster.Logging;
 using InsuranceBotMaster.Translation;
 
 namespace InsuranceBotMaster.Helpers
@@ -13,6 +14,8 @@ namespace InsuranceBotMaster.Helpers
     {
         public static async Task<string> GetResponseNorwegian(string query)
         {
+            var logger = NLog.LogManager.GetCurrentClassLogger();
+
             var cache = MemoryCache.Default;
 
             if (!(cache["bot"] is Bot bot))
@@ -31,17 +34,22 @@ namespace InsuranceBotMaster.Helpers
             var translator = new Translator(ConfigurationManager.AppSettings["TranslatorKey"]);
 
             var utteranceInEnglish = await translator.TranslateFromNorwegianToEnglish(query);
+            logger.LogTranslationResult(query, utteranceInEnglish, "Norwegian", "English");
 
             var userId = Guid.NewGuid().ToString();
             var output = bot.Chat(utteranceInEnglish, userId);
+            logger.LogAimlResult(utteranceInEnglish, output.RawOutput);
 
             var resultInNorwegian = await translator.TranslateFromEnglishToNorwegian(output.RawOutput);
+            logger.LogTranslationResult(output.RawOutput, resultInNorwegian, "English", "Norwegian");
 
             return resultInNorwegian;
         }
 
         public static string GetResponseEnglish(string query)
         {
+            var logger = NLog.LogManager.GetCurrentClassLogger();
+
             var cache = MemoryCache.Default;
 
             if (!(cache["bot"] is Bot bot))
@@ -58,7 +66,8 @@ namespace InsuranceBotMaster.Helpers
 
             var userId = Guid.NewGuid().ToString();
             var output = bot.Chat(query, userId);
-            
+            logger.LogAimlResult(query, output.RawOutput);
+
             return output.RawOutput;
         }
     }

@@ -1,49 +1,125 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Linq;
 using InsuranceBotMaster.QnA;
-using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis.Models;
 using Microsoft.Bot.Connector;
-using Newtonsoft.Json;
+using InsuranceBotMaster.Logging;
+using NLog;
+using System;
 
 namespace InsuranceBotMaster.Helpers
 {
     public static class LogHelper
     {
-        public static void Log(string messageToLog)
+        public static void LogMessage(IActivity activity)
         {
-            var logger = NLog.LogManager.GetCurrentClassLogger();
-            logger.Info($"Time: {DateTime.Now}, Conversation: {null},From: {null},To: {null}, Message:{messageToLog}, Query: {null}, TopScoringIntent:{null}, TopScoringIntentScore:{null}");
+            var logger = LogManager.GetCurrentClassLogger();
+
+            logger.LogConversation(activity.Conversation.Id, activity.From.Id, activity.Recipient.Id, activity.AsMessageActivity()?.Text, DateTime.Now, "");
         }
 
-        public static void Log(IActivity activity)
+        public static void LogLuisResult(LuisResult luisResult, IActivity activity, string dialog)
         {
-            var logger = NLog.LogManager.GetCurrentClassLogger();
-            logger.Info($"Time: {DateTime.Now}, Conversation: {activity.Conversation.Id},From: {activity.From.Id},To: {activity.Recipient.Id}, Message:{activity.AsMessageActivity()?.Text}, Query: {null}, TopScoringIntent:{null}, TopScoringIntentScore:{null}");
+            var logger = LogManager.GetCurrentClassLogger();
+
+            var orderedIntents = luisResult.Intents.OrderByDescending(x => x.Score).ToList();
+
+            var result = new Dictionary<string, string>
+            {
+                { "Dialog", dialog },
+                { "ConversationId", activity.Conversation.Id},
+                { "From", activity.From.Id },
+                { "To", activity.Recipient.Id },
+                { "Query", luisResult.Query },
+                { "TopScoringIntent", luisResult.TopScoringIntent.Intent },
+                { "TopScoringIntentScore", luisResult.TopScoringIntent.Score.ToString() }
+            };
+
+            if (orderedIntents.Count > 1)
+            {
+                result.Add("TopScoringIntent2", orderedIntents[1].Intent);
+                result.Add("TopScoringIntent2Score", orderedIntents[1].Score.ToString());
+            }
+            if (orderedIntents.Count > 2)
+            {
+                result.Add("TopScoringIntent3", orderedIntents[2].Intent);
+                result.Add("TopScoringIntent3Score", orderedIntents[2].Score.ToString());
+            }
+
+            logger.LogLuisResult(result);
         }
 
-        public static void Log(string messageToLog, IDialogContext context)
+        public static void LogQnaResult(string query, QnaQueryResult qnaResult, Activity activity, bool missedTreshold, double treshold)
         {
-            var logger = NLog.LogManager.GetCurrentClassLogger();
-            var conversationId = context.MakeMessage().Conversation.Id;
-            logger.Info($"Time: {DateTime.Now}, Conversation: {conversationId},From: {null},To: {null}, Message:{messageToLog}, Query: {null}, TopScoringIntent:{null}, TopScoringIntentScore:{null}");
+            var logger = LogManager.GetCurrentClassLogger();
+
+            var result = new Dictionary<string, string>();
+
+            var answers = qnaResult.Answers.OrderByDescending(x => x.Score).ToList();
+            
+            result.Add("ConversationId", activity.Conversation.Id);
+            result.Add("From", activity.From.Id);
+            result.Add("To", activity.Recipient.Id);
+
+            result.Add("Query", query);
+
+            if (answers.Count > 0)
+            {
+                result.Add("TopScoringAnswer", answers[0].Answer);
+                result.Add("TopScoringAnswerScore", answers[0].Score.ToString());
+            }
+
+            if (answers.Count > 1)
+            {
+                result.Add("TopScoringAnswer2", answers[1].Answer);
+                result.Add("TopScoringAnswer2Score", answers[1].Score.ToString());
+            }
+
+            if (answers.Count > 1)
+            {
+                result.Add("TopScoringAnswer3", answers[2].Answer);
+                result.Add("TopScoringAnswer3Score", answers[2].Score.ToString());
+            }
+
+            result.Add("MissedTreshold", missedTreshold.ToString());
+            result.Add("Treshold", treshold.ToString());
+
+            logger.LogQnaResult(result);
+
         }
 
-        public static void Log(LuisResult result, IDialogContext context)
+        public static void LogQnaResult(string query, QnaQueryResult qnaResult, bool missedTreshold, double treshold)
         {
-            var logger = NLog.LogManager.GetCurrentClassLogger();
-            var conversationId = context.MakeMessage().Conversation.Id;
-            var resultIntents = JsonConvert.SerializeObject(result);
+            var logger = LogManager.GetCurrentClassLogger();
 
-            logger.Info($"Time: {DateTime.Now}, Conversation: {conversationId},From: {null},To: {null}, Message:{resultIntents}, Query: {result.Query}, TopScoringIntent:{result.TopScoringIntent.Intent}, TopScoringIntentScore:{result.TopScoringIntent.Score}");
-        }
+            var result = new Dictionary<string, string>();
 
-        public static void Log(IDialogContext context, QnaQueryResult answer, string utterance)
-        {
-            var logger = NLog.LogManager.GetCurrentClassLogger();
-            var conversationId = context.MakeMessage().Conversation.Id;
-            var resultIntents = JsonConvert.SerializeObject(answer);
+            var answers = qnaResult.Answers.OrderByDescending(x => x.Score).ToList();
+            
+            result.Add("Query", query);
 
-            logger.Info($"Time: {DateTime.Now}, Conversation: {conversationId},From: {null},To: {null}, Message:{resultIntents}, Query: {utterance}, TopScoringIntent:{null}, TopScoringIntentScore:{null}");
+            if (answers.Count > 0)
+            {
+                result.Add("TopScoringAnswer", answers[0].Answer);
+                result.Add("TopScoringAnswerScore", answers[0].Score.ToString());
+            }
+
+            if (answers.Count > 1)
+            {
+                result.Add("TopScoringAnswer2", answers[1].Answer);
+                result.Add("TopScoringAnswer2Score", answers[1].Score.ToString());
+            }
+
+            if (answers.Count > 1)
+            {
+                result.Add("TopScoringAnswer3", answers[2].Answer);
+                result.Add("TopScoringAnswer3Score", answers[2].Score.ToString());
+            }
+
+            result.Add("MissedTreshold", missedTreshold.ToString());
+            result.Add("Treshold", treshold.ToString());
+
+            logger.LogQnaResult(result);
         }
     }
 }

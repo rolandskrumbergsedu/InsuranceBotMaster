@@ -216,5 +216,15 @@ namespace InsuranceBotMaster.Logging
                 InternalLogger.Error($"Error writing to Sql table: {ex}. Stacktrace: {ex.StackTrace}");
             }
         }
+
+        public void WriteTranslationLog(LogEventInfo logEvent)
+        {
+
+        }
+
+        public void WriteAimlLog(LogEventInfo logEvent)
+        {
+
+        }
     }
 }

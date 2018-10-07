@@ -8,7 +8,7 @@ namespace InsuranceBotMaster.Helpers
     {
         public async Task LogAsync(IActivity activity)
         {
-            LogHelper.Log(activity);
+            LogHelper.LogMessage(activity);
         }
     }
 }

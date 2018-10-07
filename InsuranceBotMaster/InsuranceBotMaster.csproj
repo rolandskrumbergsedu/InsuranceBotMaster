@@ -322,8 +322,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logging\LoggerExtension.cs" />
-    <Compile Include="Logging\SqlDbTarget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -350,6 +348,10 @@
     <ProjectReference Include="..\InsuranceBotMaster.AIML\InsuranceBotMaster.AIML.csproj">
       <Project>{2f3f5931-a96e-4ddf-841d-93ebb58a034a}</Project>
       <Name>InsuranceBotMaster.AIML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InsuranceBotMaster.Logging\InsuranceBotMaster.Logging.csproj">
+      <Project>{daff8706-4429-4f37-abb1-0aafb6922cbc}</Project>
+      <Name>InsuranceBotMaster.Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\InsuranceBotMaster.LUIS\InsuranceBotMaster.LUIS.csproj">
       <Project>{384c8cd2-941f-4ff7-8a06-dc0db57aab97}</Project>

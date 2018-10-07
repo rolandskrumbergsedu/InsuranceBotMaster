@@ -307,5 +307,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InsuranceBotMaster.Logging\InsuranceBotMaster.Logging.csproj">
+      <Project>{daff8706-4429-4f37-abb1-0aafb6922cbc}</Project>
+      <Name>InsuranceBotMaster.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
