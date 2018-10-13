@@ -12,7 +12,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Common
             ConfigurationManager.AppSettings["LuisAppId"],
             ConfigurationManager.AppSettings["LuisAPIKey"],
             domain: ConfigurationManager.AppSettings["LuisAPIHostName"],
-            threshold: double.Parse(ConfigurationManager.AppSettings["LuisAPIHostName"]))))
+            threshold: double.Parse(ConfigurationManager.AppSettings["LuisThreshold"]))))
         {
         }
     }

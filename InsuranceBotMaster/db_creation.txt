@@ -86,3 +86,15 @@
     CONSTRAINT [PK_dbo.AimlResults] PRIMARY KEY CLUSTERED ([Id] ASC)
       WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
   ) ON [PRIMARY]
+
+  SET ANSI_NULLS ON
+  SET QUOTED_IDENTIFIER ON
+  CREATE TABLE [dbo].[Errors] (
+	  [Id] [int] IDENTITY(1,1) NOT NULL,
+	  [LogTimeStamp] [datetime],
+	  [Message] [nvarchar](4000),
+	  [Exception] [nvarchar](1000),
+	  [Stacktrace] [nvarchar](max),
+    CONSTRAINT [PK_dbo.Errors] PRIMARY KEY CLUSTERED ([Id] ASC)
+      WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+  ) ON [PRIMARY]

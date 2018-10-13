@@ -167,5 +167,23 @@ namespace InsuranceBotMaster.Logging
 
             dbTarget.WriteTranslationLog(myEvent);
         }
+
+        public static void LogError(this Logger logger, string message, string exception, string stacktrace)
+        {
+            var dbTarget = new SqlDbTarget
+            {
+                TableName = "Errors",
+                ConnectionString = ConfigurationManager.ConnectionStrings["LogDatabase"].ConnectionString
+            };
+
+            var myEvent = new LogEventInfo(LogLevel.Info, logger.Name, message) { LoggerName = logger.Name };
+
+            myEvent.Properties.Add("Message", message);
+            myEvent.Properties.Add("Exception", exception);
+            myEvent.Properties.Add("Stacktrace", stacktrace);
+            myEvent.Properties.Add("LogTimeStamp", DateTime.Now);
+
+            dbTarget.WriteErrorLog(myEvent);
+        }
     }
 }

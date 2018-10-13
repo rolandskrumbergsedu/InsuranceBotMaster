@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Reflection;
 using System.Runtime.Caching;
-using System.Threading;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -9,11 +9,14 @@ using System.Web.Routing;
 using Autofac;
 using InsuranceBotMaster.AIML;
 using InsuranceBotMaster.AIML.Utils;
+using InsuranceBotMaster.Dialogs.Technical;
 using InsuranceBotMaster.Helpers;
+using Microsoft.Bot.Builder.Autofac.Base;
 using Microsoft.Bot.Builder.Azure;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Dialogs.Internals;
 using Microsoft.Bot.Connector;
+using PostUnhandledExceptionToUser = Microsoft.Bot.Builder.Dialogs.Internals.PostUnhandledExceptionToUser;
 
 namespace InsuranceBotMaster
 {
@@ -30,6 +33,8 @@ namespace InsuranceBotMaster
 
             Conversation.UpdateContainer(builder =>
             {
+                builder.RegisterModule(new AzureModule(Assembly.GetExecutingAssembly()));
+
                 var store = new InMemoryDataStore();
                 builder.Register(c => store)
                     .Keyed<IBotDataStore<BotData>>(AzureModule.Key_DataStore)
@@ -37,8 +42,11 @@ namespace InsuranceBotMaster
                     .SingleInstance();
 
                 builder.RegisterType<DebugActivityLogger>().AsImplementedInterfaces().InstancePerDependency();
-            });
 
+                builder.RegisterModule(new PostUnhandledExceptionToUserModule());
+
+            });
+            
             var settingsPath = HttpContext.Current.Server.MapPath("~/bin/ConfigurationFiles/Settings.xml");
             var aimlPath = HttpContext.Current.Server.MapPath("~/bin/AIMLFiles");
             var basePath = HttpContext.Current.Server.MapPath("~/bin");

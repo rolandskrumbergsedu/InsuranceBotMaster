@@ -13,8 +13,6 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
     [Serializable]
     public class RootLuisDialog : BasicLuisDialog
     {
-        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
-
         [LuisIntent("")]
         [LuisIntent("None")]
         public async Task NoneIntent(IDialogContext context, LuisResult result)

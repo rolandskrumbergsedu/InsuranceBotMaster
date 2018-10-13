@@ -323,5 +323,54 @@ namespace InsuranceBotMaster.Logging
                 InternalLogger.Error($"Error writing to Sql table: {ex}. Stacktrace: {ex.StackTrace}");
             }
         }
+
+        public void WriteErrorLog(LogEventInfo logEvent)
+        {
+            try
+            {
+                var query = $"INSERT INTO [{TableName}] (Message, Exception, Stacktrace, LogTimeStamp)";
+                query += " VALUES(@Message, @Exception, @Stacktrace, @LogTimeStamp)";
+
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    var cmd = new SqlCommand
+                    {
+                        Connection = connection,
+                        CommandType = CommandType.Text,
+                        CommandText = query
+                    };
+
+                    cmd.Parameters.Add("@Message", SqlDbType.NVarChar, 4000).Value = logEvent.Properties["Message"];
+                    cmd.Parameters.Add("@Exception", SqlDbType.NVarChar, 1000).Value = logEvent.Properties["Exception"];
+                    cmd.Parameters.Add("@Stacktrace", SqlDbType.NVarChar).Value = logEvent.Properties["Stacktrace"];
+                    cmd.Parameters.Add("@LogTimeStamp", SqlDbType.DateTime).Value = logEvent.Properties["LogTimeStamp"];
+
+                    try
+                    {
+                        cmd.Connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    finally
+                    {
+                        if (cmd.Connection.State != ConnectionState.Closed)
+                        {
+                            cmd.Connection.Close();
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is NLogConfigurationException || ex.GetType().IsSubclassOf(typeof(NLogConfigurationException)))
+                {
+                    throw;
+                }
+
+                Trace.TraceError($"NLog.Extensions.AzureSqlDb.Write() error: {ex}. Stacktrace: {ex.StackTrace}");
+                InternalLogger.Error($"Error writing to Sql table: {ex}. Stacktrace: {ex.StackTrace}");
+            }
+        }
+
     }
 }
