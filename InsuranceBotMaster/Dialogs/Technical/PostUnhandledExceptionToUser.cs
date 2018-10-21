@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Mime;
 using System.Resources;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
-using Autofac;
 using InsuranceBotMaster.Logging;
 using Microsoft.Bot.Builder.Dialogs.Internals;
 using Microsoft.Bot.Builder.Internals.Fibers;
@@ -41,14 +36,14 @@ namespace InsuranceBotMaster.Dialogs.Technical
             catch (Exception error)
             {
                 var logger = LogManager.GetCurrentClassLogger();
-                logger.LogError("Unhandled exception during dialog.", error.Message, GetException(error));
+                logger.LogError("Unhandled exception during dialog.", error.Message, error.ToString(), activity.Conversation.Id);
 
                 try
                 {
                     if (Debugger.IsAttached)
                     {
                         var message = _botToUser.MakeMessage();
-                        message.Text = $"Exception: { GetException(error)}";
+                        message.Text = $"Exception: { error }";
                         message.Attachments = new[]
                         {
                             new Attachment(MediaTypeNames.Text.Plain, content: error.StackTrace)
@@ -66,25 +61,11 @@ namespace InsuranceBotMaster.Dialogs.Technical
                 catch (Exception inner)
                 {
                     _trace.WriteLine(inner);
-                    logger.LogError("Unhandled exception during handling an error.", inner.Message, GetException(inner));
+                    logger.LogError("Unhandled exception during handling an error.", inner.Message, inner.ToString(), activity.Conversation.Id);
                 }
 
                 throw;
             }
-        }
-
-        private static string GetException(Exception ex)
-        {
-            var sb = new StringBuilder();
-
-            if (ex == null) return sb.ToString();
-
-            sb.Append(ex.Message);
-            if (ex.InnerException != null)
-            {
-                sb.Append(GetException(ex.InnerException));
-            }
-            return sb.ToString();
         }
     }
 }

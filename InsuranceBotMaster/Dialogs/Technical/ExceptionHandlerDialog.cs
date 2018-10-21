@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using InsuranceBotMaster.Logging;
 using Microsoft.Bot.Builder.Dialogs;
 using NLog;
@@ -13,9 +10,6 @@ namespace InsuranceBotMaster.Dialogs.Technical
     public class ExceptionHandlerDialog<T> : IExceptionDialog<T>
     {
         private IDialog<T> _dialog;
-
-        private readonly string _message;
-
         public void SetDialog(IDialog<T> dialog)
         {
             _dialog = dialog;
@@ -25,22 +19,13 @@ namespace InsuranceBotMaster.Dialogs.Technical
         {
         }
 
-        public ExceptionHandlerDialog(string message)
+        public ExceptionHandlerDialog(IDialog<T> dialog)
         {
-            _message = message;
+            _dialog = dialog;
         }
 
         public async Task StartAsync(IDialogContext context)
         {
-            if (!string.IsNullOrEmpty(_message))
-            {
-                var logger = LogManager.GetCurrentClassLogger();
-                logger.LogError("Exception occured in ExceptionHandler.Message.", _message, string.Empty);
-
-                context.Done("Done");
-                return;
-            }
-
             try
             {
                 context.Call(_dialog, ResumeAsync);
@@ -48,7 +33,7 @@ namespace InsuranceBotMaster.Dialogs.Technical
             catch (Exception e)
             {
                 var logger = LogManager.GetCurrentClassLogger();
-                logger.LogError("Exception occured in ExceptionHandler.", e.Message, e.StackTrace);
+                logger.LogError("Exception occured in ExceptionHandler.", e.Message, e.StackTrace, context.Activity.Conversation.Id);
             }
         }
 
@@ -61,23 +46,9 @@ namespace InsuranceBotMaster.Dialogs.Technical
             catch (Exception e)
             {
                 var logger = LogManager.GetCurrentClassLogger();
-                logger.LogError("Exception occured in ResumeAsync.", e.Message, e.StackTrace);
+                logger.LogError("Exception occured in ResumeAsync.", e.Message, e.ToString(), context.Activity.Conversation.Id);
             }
             context.Done("Done");
-        }
-
-        private static async Task DisplayExceptionAsync(IDialogContext context, Exception e)
-        {
-
-            var stackTrace = e.StackTrace;
-
-            stackTrace = stackTrace.Replace(Environment.NewLine, "  \n");
-
-            var message = e.Message.Replace(Environment.NewLine, "  \n");
-
-            var exceptionStr = $"**{message}**  \n\n{stackTrace}";
-
-            await context.PostAsync($"Debug: {exceptionStr}").ConfigureAwait(false);
         }
     }
 }

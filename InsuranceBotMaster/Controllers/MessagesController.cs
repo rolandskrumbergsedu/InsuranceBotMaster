@@ -25,8 +25,10 @@ namespace InsuranceBotMaster.Controllers
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new RootLuisDialog());
+                //await Conversation.SendAsync(activity, () => new RootLuisDialog());
                 //await Conversation.SendAsync(activity, () => new MainGuidedDialog());
+
+                await Conversation.SendAsync(activity, () => new ExceptionHandlerDialog<object>(new RootLuisDialog()));
             }
             else
             {

@@ -126,7 +126,7 @@ namespace InsuranceBotMaster.Logging
             myEvent.Properties.Add("MissedTreshold", logInfo["MissedTreshold"]);
             myEvent.Properties.Add("Treshold", double.Parse(logInfo["Treshold"]));
 
-            dbTarget.WriteLuisLog(myEvent);
+            dbTarget.WriteQnaLog(myEvent);
 
         }
 
@@ -168,7 +168,7 @@ namespace InsuranceBotMaster.Logging
             dbTarget.WriteTranslationLog(myEvent);
         }
 
-        public static void LogError(this Logger logger, string message, string exception, string stacktrace)
+        public static void LogError(this Logger logger, string message, string exception, string stacktrace, string conversationId)
         {
             var dbTarget = new SqlDbTarget
             {
@@ -182,6 +182,7 @@ namespace InsuranceBotMaster.Logging
             myEvent.Properties.Add("Exception", exception);
             myEvent.Properties.Add("Stacktrace", stacktrace);
             myEvent.Properties.Add("LogTimeStamp", DateTime.Now);
+            myEvent.Properties.Add("ConversationId", conversationId);
 
             dbTarget.WriteErrorLog(myEvent);
         }
