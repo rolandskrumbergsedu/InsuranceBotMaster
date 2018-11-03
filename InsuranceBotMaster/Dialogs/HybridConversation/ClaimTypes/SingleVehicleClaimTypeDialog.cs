@@ -11,7 +11,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.ClaimTypes
     {
         public async Task StartAsync(IDialogContext context)
         {
-            await context.PostAsync("So sorry to hear that!");
+            await context.PostAsync("Så lei meg for å høre det!");
             context.Call(new BasicInputTextDialog("Hvilken dato skjedde ulykken?"), IncidentDateDialogResumeAfter);
         }
 

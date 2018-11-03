@@ -303,6 +303,8 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\insurance-bot-master - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\insurancebotmaster-v1-test - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\insurancebotmaster-v2-test - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

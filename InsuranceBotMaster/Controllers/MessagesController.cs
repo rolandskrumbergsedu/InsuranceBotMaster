@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -25,10 +26,16 @@ namespace InsuranceBotMaster.Controllers
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //await Conversation.SendAsync(activity, () => new RootLuisDialog());
-                //await Conversation.SendAsync(activity, () => new MainGuidedDialog());
-
-                await Conversation.SendAsync(activity, () => new ExceptionHandlerDialog<object>(new RootLuisDialog()));
+                if (ConfigurationManager.AppSettings["ConversationType"] == "Luis")
+                {
+                    await Conversation.SendAsync(activity,
+                        () => new ExceptionHandlerDialog<object>(new RootLuisDialog()));
+                }
+                else
+                {
+                    await Conversation.SendAsync(activity,
+                        () => new ExceptionHandlerDialog<object>(new MainGuidedDialog()));
+                }
             }
             else
             {
