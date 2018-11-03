@@ -10,11 +10,13 @@ namespace InsuranceBotMaster.Translation.Tests
         [TestMethod]
         public async Task Test_Translator()
         {
-            var key = "29569f3847a84fa3ba411afdc2618e1e";
+            var key = "5e6a1347297a4598b815fc3d0a85927e";
 
             var translator = new Translator(key);
 
             var result = await translator.TranslateFromEnglishToNorwegian("My name is Rolands");
+
+            Assert.AreEqual("Mitt navn er Rolands", result);
         }
     }
 }

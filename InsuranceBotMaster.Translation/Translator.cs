@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Newtonsoft.Json;
 
 namespace InsuranceBotMaster.Translation
 {
@@ -12,8 +13,11 @@ namespace InsuranceBotMaster.Translation
     public class Translator
     {
         private readonly string _translatorKey;
-        private const string Host = "https://api.microsofttranslator.com";
-        private const string Path = "/V2/Http.svc/Translate";
+        private const string Host = "https://api.cognitive.microsofttranslator.com";
+        private const string Path = "/translate?api-version=3.0";
+
+        private const string Norwegian = "nb";
+        private const string English = "en";
 
         public Translator(string translatorKey)
         {
@@ -22,44 +26,39 @@ namespace InsuranceBotMaster.Translation
 
         public async Task<string> TranslateFromNorwegianToEnglish(string textToTranslate)
         {
-            return await Translate(textToTranslate, "nb-no", "en-us");
+            var translation = await Translate(textToTranslate, Norwegian, English);
+            var result = translation.Translations.FirstOrDefault(x => x.To == English);
+            return result != null ? result.Text : string.Empty;
         }
 
         public async Task<string> TranslateFromEnglishToNorwegian(string textToTranslate)
         {
-            return await Translate(textToTranslate, "en-us", "nb-no");
+            var translation = await Translate(textToTranslate, English, Norwegian);
+            var result = translation.Translations.FirstOrDefault(x => x.To == Norwegian);
+            return result != null ? result.Text : string.Empty;
         }
 
-        private async Task<string> Translate(string textToTranslate, string culture)
+        public async Task<TranslationResponse> Translate(string textToTranslate, string fromCulture, string toCulture)
         {
+            object[] body = { new { Text = textToTranslate } };
+            var requestBody = JsonConvert.SerializeObject(body);
+
+            var uri = Host + Path + $"&to={fromCulture}&to={toCulture}";
+
             using (var client = new HttpClient())
+            using (var request = new HttpRequestMessage())
             {
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _translatorKey);
+                request.Method = HttpMethod.Post;
+                request.RequestUri = new Uri(uri);
+                request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+                request.Headers.Add("Ocp-Apim-Subscription-Key", _translatorKey);
 
-                var uri = Host + Path + "?to=" + culture + "&text=" + System.Net.WebUtility.UrlEncode(textToTranslate);
+                var response = await client.SendAsync(request);
+                var responseBody = await response.Content.ReadAsStringAsync();
 
-                var response = await client.GetAsync(uri);
-                var result = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<List<TranslationResponse>>(responseBody);
 
-                var content = XElement.Parse(result).Value;
-
-                return content;
-            }
-        }
-
-        private async Task<string> Translate(string textToTranslate, string fromCulture, string toCulture)
-        {
-            using (var client = new HttpClient())
-            {
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _translatorKey);
-
-                var uri = Host + Path + "?from=" + fromCulture + "&to=" + toCulture + "&text=" + System.Net.WebUtility.UrlEncode(textToTranslate);
-                var response = await client.GetAsync(uri);
-                var result = await response.Content.ReadAsStringAsync();
-
-                var content = XElement.Parse(result).Value;
-
-                return content;
+                return result.FirstOrDefault(x => x.DetectedLanguage.Language == fromCulture);
             }
         }
     }
