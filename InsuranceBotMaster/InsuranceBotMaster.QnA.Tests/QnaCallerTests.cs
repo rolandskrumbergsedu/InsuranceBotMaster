@@ -10,8 +10,8 @@ namespace InsuranceBotMaster.QnA.Tests
         [TestMethod]
         public async Task Call_QnA()
         {
-            var kbId = "51a53b34-dc8f-4c2a-899d-2ae926b2d3fb";
-            var qnaKey = "d952660440e84528b63bbbb6039b86be";
+            var kbId = "13b548dd-e2c7-4513-b331-237511233965";
+            var qnaKey = "93a2ad45-07b9-4032-beb8-39902fd9a525";
 
             var caller = new QnaCaller(kbId, qnaKey);
 
@@ -19,7 +19,7 @@ namespace InsuranceBotMaster.QnA.Tests
 
             var qnaResult = await caller.Query(question);
 
-            Assert.AreEqual("hello", qnaResult.Answers[0].Answer);
+            Assert.AreEqual("Hello!", qnaResult.Answers[0].Answer);
             Assert.AreEqual(100, qnaResult.Answers[0].Score);
         }
     }

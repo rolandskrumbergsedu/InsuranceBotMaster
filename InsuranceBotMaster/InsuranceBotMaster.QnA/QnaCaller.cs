@@ -23,8 +23,8 @@ namespace InsuranceBotMaster.QnA
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("https://westus.api.cognitive.microsoft.com/qnamaker/v2.0/knowledgebases/" + _kbId + "/");
-                client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", _key);
+                client.BaseAddress = new Uri("https://insurancebot-test.azurewebsites.net/qnamaker/knowledgebases/" + _kbId + "/");
+                client.DefaultRequestHeaders.Add("Authorization", "EndpointKey " + _key);
 
                 var query = new QnaQuery(question);
 
