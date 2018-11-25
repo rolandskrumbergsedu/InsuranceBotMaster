@@ -14,9 +14,9 @@ namespace InsuranceBotMaster.Translation.Tests
 
             var translator = new Translator(key);
 
-            var result = await translator.TranslateFromEnglishToNorwegian("My name is Rolands");
+            var result = await translator.TranslateFromNorwegianToEnglish("Mitt navn er Rolands");
 
-            Assert.AreEqual("Mitt navn er Rolands", result);
+            Assert.AreEqual("My name is Rolands", result);
         }
     }
 }

@@ -364,8 +364,8 @@ namespace InsuranceBotMaster.Logging
         {
             try
             {
-                var query = $"INSERT INTO [{TableName}] (LogTimeStamp, Query, Result, SourceLanguage, TargetLanguage)";
-                query += " VALUES(@LogTimeStamp, @Query, @Result, @SourceLanguage, @TargetLanguage)";
+                var query = $"INSERT INTO [{TableName}] (LogTimeStamp, Query, Result)";
+                query += " VALUES(@LogTimeStamp, @Query, @Result)";
 
                 using (var connection = new SqlConnection(ConnectionString))
                 {
@@ -380,14 +380,6 @@ namespace InsuranceBotMaster.Logging
                         ? logEvent.Properties["LogTimeStamp"]
                         : DBNull.Value;
 
-                    var sourceLanguage = logEvent.Properties.ContainsKey("SourceLanguage")
-                        ? logEvent.Properties["SourceLanguage"]
-                        : DBNull.Value;
-
-                    var targetLanguage = logEvent.Properties.ContainsKey("TargetLanguage")
-                        ? logEvent.Properties["TargetLanguage"]
-                        : DBNull.Value;
-
                     var result = logEvent.Properties.ContainsKey("Result")
                         ? logEvent.Properties["Result"]
                         : DBNull.Value;
@@ -399,8 +391,6 @@ namespace InsuranceBotMaster.Logging
                     cmd.Parameters.Add("@LogTimeStamp", SqlDbType.DateTime).Value = logtimeStamp;
                     cmd.Parameters.Add("@Query", SqlDbType.NVarChar, 4000).Value = queryText;
                     cmd.Parameters.Add("@Result", SqlDbType.NVarChar, 4000).Value = result;
-                    cmd.Parameters.Add("@SourceLanguage", SqlDbType.NVarChar, 100).Value = sourceLanguage;
-                    cmd.Parameters.Add("@TargetLanguage", SqlDbType.NVarChar, 100).Value = targetLanguage;
 
                     try
                     {

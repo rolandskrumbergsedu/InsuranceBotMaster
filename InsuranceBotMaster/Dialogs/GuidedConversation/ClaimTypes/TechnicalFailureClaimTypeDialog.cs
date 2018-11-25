@@ -42,7 +42,7 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation.ClaimTypes
         {
             await context.PostAsync(
                 "Takk, da har vi fått skademeldingen din, og vi kommer til å kontakte deg i løpet av første arbeidsdag.");
-            context.Done(this);
+            context.EndConversation("End of conversation");
         }
     }
 }

@@ -58,7 +58,9 @@ namespace InsuranceBotMaster.Translation
 
                 var result = JsonConvert.DeserializeObject<List<TranslationResponse>>(responseBody);
 
-                return result.FirstOrDefault(x => x.DetectedLanguage.Language == fromCulture);
+                var detectedTranslation = result.FirstOrDefault(x => x.DetectedLanguage.Language == fromCulture);
+
+                return detectedTranslation ?? result.OrderByDescending(x => x.DetectedLanguage.Score).FirstOrDefault();
             }
         }
     }
