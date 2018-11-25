@@ -351,7 +351,7 @@ namespace InsuranceBotMaster.AIML
             }
             if (!GlobalSettings.ContainsSettingCalled("name"))
             {
-                GlobalSettings.AddSetting("name", "If bot");
+                GlobalSettings.AddSetting("name", "Chat bot");
             }
             if (!GlobalSettings.ContainsSettingCalled("botmaster"))
             {
