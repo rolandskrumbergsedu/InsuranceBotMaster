@@ -9,7 +9,6 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation.Questions
     {
         public async Task StartAsync(IDialogContext context)
         {
-            await context.PostAsync("Var det du som kjørte?");
             context.Call(new AreYouTheDriverDialog(), AreYouTheDriverDialogResumeAfter);
         }
 

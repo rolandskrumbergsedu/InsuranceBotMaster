@@ -127,7 +127,7 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
         {
             LogHelper.LogLuisResult(result, context.Activity, typeof(RootLuisDialog).Name);
 
-            await context.PostAsync("Ok. Can you explain shortly what has happened?");
+            await context.PostAsync("Ok. Kan du forklare hva som skjedde?");
         }
 
         [LuisIntent("RoadAssistance")]
@@ -148,12 +148,12 @@ namespace InsuranceBotMaster.Dialogs.HybridConversation
 
         private async Task ClaimTypeDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
-            await context.PostAsync("If there is something else I can help you with I will be glad to assist you?");
+            await context.PostAsync("Om det er noe annet jeg kan hjelpe deg med, vil jeg gjerne gjøre det.");
         }
 
         private async Task CompleteDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
-            await context.PostAsync("If there is something else I can help you with I will be glad to assist you?");
+            await context.PostAsync("Om det er noe annet jeg kan hjelpe deg med, vil jeg gjerne gjøre det.");
         }
     }
 }

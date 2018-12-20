@@ -15,5 +15,10 @@ namespace InsuranceBotMaster.Controllers
             logger.Error($"Hit on Index @ {DateTime.Now}");
             return View();
         }
+
+        public ActionResult Instructions()
+        {
+            return View();
+        }
     }
 }

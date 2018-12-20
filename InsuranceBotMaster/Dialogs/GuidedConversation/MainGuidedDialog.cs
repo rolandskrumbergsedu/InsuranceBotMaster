@@ -68,7 +68,7 @@ namespace InsuranceBotMaster.Dialogs.GuidedConversation
 
         private async Task CompleteDialogResumeAfter(IDialogContext context, IAwaitable<object> result)
         {
-            context.Done(this);
+            await context.PostAsync("Om det er noe annet jeg kan hjelpe deg med, vil jeg gjerne gjøre det.");
         }
     }
 }
